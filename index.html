@@ -16,6 +16,9 @@
 </head>
 <body>
 
+    <!-- SCROLL PROGRESS BAR -->
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
     <!-- TOP ANNOUNCEMENT BAR -->
     <div class="top-bar">
         <div class="container top-bar-content">
@@ -49,7 +52,8 @@
                     <li><a href="#accueil" class="nav-link active"><i class="fa-solid fa-house"></i> Accueil</a></li>
                     <li><a href="#apropos" class="nav-link"><i class="fa-solid fa-circle-info"></i> À Propos</a></li>
                     <li><a href="#machines" class="nav-link"><i class="fa-solid fa-gears"></i> Machines & Outils</a></li>
-                    <li><a href="#avantages" class="nav-link"><i class="fa-solid fa-shield-halved"></i> Garanties</a></li>
+                    <li><a href="#temoignages" class="nav-link"><i class="fa-solid fa-comments"></i> Avis</a></li>
+                    <li><a href="#faq" class="nav-link"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
                     <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
                 </ul>
                 <div class="nav-mobile-actions">
@@ -81,6 +85,7 @@
 
     <!-- HERO SECTION -->
     <section class="hero" id="accueil">
+        <canvas id="sparksCanvas" class="hero-sparks-canvas"></canvas>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="hero-badge animate-fade">
@@ -102,19 +107,23 @@
                 </a>
             </div>
 
-            <!-- Key Quick Stats -->
-            <div class="hero-stats">
+            <!-- Key Quick Stats with Live Counters -->
+            <div class="hero-stats" id="heroStats">
                 <div class="stat-item">
-                    <span class="stat-number">35+</span>
+                    <span class="stat-number count-up" data-target="36" data-suffix="+">0</span>
                     <span class="stat-label">Machines & Équipements</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">100%</span>
+                    <span class="stat-number count-up" data-target="100" data-suffix="%">0</span>
                     <span class="stat-label">Marque Upspirit Certifiée</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Assistance WhatsApp Directe</span>
+                    <span class="stat-number count-up" data-target="500" data-suffix="+">0</span>
+                    <span class="stat-label">Artisans & Pros Équipés</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number count-up" data-target="24" data-suffix="/7">0</span>
+                    <span class="stat-label">Assistance WhatsApp</span>
                 </div>
             </div>
         </div>
@@ -223,6 +232,17 @@
                 <button class="cat-pill" data-category="echelles"><i class="fa-solid fa-stairs"></i> Échelles & Travail en hauteur</button>
             </div>
 
+            <!-- Quick Budget Filter Bar -->
+            <div class="budget-filter-bar">
+                <span class="budget-label"><i class="fa-solid fa-coins text-yellow"></i> Budget :</span>
+                <div class="budget-pills" id="budgetPills">
+                    <button class="b-pill active" data-budget="all">Tous les prix</button>
+                    <button class="b-pill" data-budget="under10k">&lt; 10 000 XOF</button>
+                    <button class="b-pill" data-budget="10k25k">10 000 - 25 000 XOF</button>
+                    <button class="b-pill" data-budget="above25k">&gt; 25 000 XOF</button>
+                </div>
+            </div>
+
             <!-- Products Counter & Active Filter Display -->
             <div class="results-bar">
                 <span id="resultsCount">Affichage de <strong>36</strong> machines et outils</span>
@@ -270,6 +290,114 @@
                     <div class="adv-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
                     <h3>Tarifs Direct Importateur</h3>
                     <p>Les meilleurs prix du marché sans intermédiaire sur l'ensemble de notre gamme de machines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION TEMOIGNAGES CLIENTS & ARTISANS -->
+    <section class="testimonials-section" id="temoignages">
+        <div class="container">
+            <div class="section-tag center"><i class="fa-solid fa-comments"></i> RETOUR D'EXPÉRIENCE</div>
+            <h2 class="section-title text-center">Ce que disent <span class="text-yellow">Nos Clients & Artisans</span></h2>
+            <p class="section-subtitle text-center" style="margin-left: auto; margin-right: auto;">
+                Découvrez les retours de professionnels du BTP, menuisiers, soudeurs et mécaniciens équipés par Tim Tools Machines.
+            </p>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testi-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testi-quote">"J'ai commandé le marteau piqueur HK-DH35B et une meuleuse 230mm pour mon chantier à Cocody. Matériel hyper costaud et livré en moins de 24h. Le service WhatsApp est ultra réactif !"</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                        <div>
+                            <strong>Kouassi M.</strong>
+                            <span>Entrepreneur BTP - Abidjan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testi-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testi-quote">"Le poste à souder Inverter MMA 300 Upspirit tient parfaitement la cadence dans mon atelier de ferronnerie. Très léger et soudure propre. Excellent rapport qualité/prix en FCFA."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar"><i class="fa-solid fa-user-gear"></i></div>
+                        <div>
+                            <strong>Amadou T.</strong>
+                            <span>Ferronnier & Soudeur Pro</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testi-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testi-quote">"La mallette 186 pièces et la balance 300kg reçues conformes aux photos. Commande passée sur WhatsApp en 2 minutes. Je recommande vivement Tim Tools Machines !"</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar"><i class="fa-solid fa-user-check"></i></div>
+                        <div>
+                            <strong>Ibrahim C.</strong>
+                            <span>Responsable Maintenance Industrielle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION FAQ INTERACTIVE -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-tag center"><i class="fa-solid fa-circle-question"></i> FOIRE AUX QUESTIONS</div>
+            <h2 class="section-title text-center">Questions <span class="text-yellow">Fréquentes</span></h2>
+            <p class="section-subtitle text-center" style="margin-left: auto; margin-right: auto;">
+                Tout ce que vous devez savoir avant de passer commande chez Tim Tools Machines.
+            </p>
+
+            <div class="faq-accordion" id="faqAccordion">
+                <div class="faq-item active">
+                    <button class="faq-question">
+                        <span><i class="fa-brands fa-whatsapp text-yellow"></i> Comment passer commande sur WhatsApp ?</span>
+                        <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Cliquez simplement sur le bouton <strong>"Commander"</strong> sous n'importe quel article pour démarrer une discussion avec le message pré-rempli. Vous pouvez aussi ajouter plusieurs articles à votre panier et cliquer sur <strong>"Valider la commande sur WhatsApp"</strong> pour transmettre l'ensemble de votre devis chiffré.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span><i class="fa-solid fa-shield-halved text-yellow"></i> Les machines Upspirit sont-elles authentiques et garanties ?</span>
+                        <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolument. Nous sommes distributeurs de la marque <strong>UPSPIRIT</strong>. Chaque équipement est 100% neuf, vérifié en usine et livré dans son emballage d'origine avec ses accessoires officiels.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span><i class="fa-solid fa-truck-fast text-yellow"></i> Quels sont les délais et zones de livraison ?</span>
+                        <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La livraison s'effectue en <strong>24h à 48h</strong> sur Abidjan et partout en Côte d'Ivoire. Nous expédions également par fret routier et aérien dans toute la sous-région ouest-africaine et à l'international.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span><i class="fa-solid fa-wallet text-yellow"></i> Quels sont les modes de paiement acceptés ?</span>
+                        <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Vous pouvez régler par Wave, Orange Money, MTN MoMo, Moov Money, virement bancaire ou paiement comptant à la livraison selon votre localisation.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -458,6 +586,14 @@
         <i class="fa-brands fa-whatsapp"></i>
         <span class="whatsapp-tooltip">Commander sur WhatsApp</span>
     </a>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut" title="Remonter en haut de page">
+        <svg class="progress-ring" width="48" height="48">
+            <circle class="progress-ring-circle" stroke="var(--yellow-primary)" stroke-width="3" fill="transparent" r="21" cx="24" cy="24"/>
+        </svg>
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <!-- TOAST NOTIFICATIONS -->
     <div class="toast-container" id="toastContainer"></div>

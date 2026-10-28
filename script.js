@@ -1,5 +1,5 @@
 /**
- * TIM TOOLS MACHINES - Application Web Dynamique
+ * TIM TOOLS MACHINES - Application Web Dynamique & Interactive
  * Distributeur Officiel UPSPIRIT
  * Contact: +225 07 89 55 74 42 | WhatsApp: +225 07 15 03 27 98
  */
@@ -406,6 +406,7 @@ const PRODUCTS = [
 
 // STATE MANAGEMENT
 let currentCategory = "all";
+let currentBudget = "all";
 let currentSearch = "";
 let currentSort = "default";
 let cart = [];
@@ -418,6 +419,7 @@ const searchInput = document.getElementById("searchInput");
 const clearSearchBtn = document.getElementById("clearSearch");
 const sortSelect = document.getElementById("sortSelect");
 const categoryTabs = document.getElementById("categoryTabs");
+const budgetPills = document.getElementById("budgetPills");
 const productModal = document.getElementById("productModal");
 const modalBody = document.getElementById("modalBody");
 const modalCloseBtn = document.getElementById("modalCloseBtn");
@@ -435,6 +437,8 @@ const toastContainer = document.getElementById("toastContainer");
 const mobileToggle = document.getElementById("mobileToggle");
 const navMenu = document.getElementById("navMenu");
 const header = document.getElementById("header");
+const scrollProgressBar = document.getElementById("scrollProgressBar");
+const backToTopBtn = document.getElementById("backToTop");
 
 // INITIALIZATION
 document.addEventListener("DOMContentLoaded", () => {
@@ -442,6 +446,10 @@ document.addEventListener("DOMContentLoaded", () => {
     renderProducts();
     setupEventListeners();
     updateCartCount();
+    initSparks();
+    initScrollDynamics();
+    initCounters();
+    initFaq();
 });
 
 // SETUP LISTENERS
@@ -478,6 +486,19 @@ function setupEventListeners() {
         renderProducts();
     });
 
+    // Budget Filter pills
+    if (budgetPills) {
+        budgetPills.addEventListener("click", (e) => {
+            const btn = e.target.closest(".b-pill");
+            if (!btn) return;
+
+            budgetPills.querySelectorAll(".b-pill").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            currentBudget = btn.dataset.budget;
+            renderProducts();
+        });
+    }
+
     // Reset filters
     const resetFiltersBtn = document.getElementById("resetFiltersBtn");
     if (resetFiltersBtn) {
@@ -486,11 +507,17 @@ function setupEventListeners() {
             currentSearch = "";
             clearSearchBtn.style.display = "none";
             currentCategory = "all";
+            currentBudget = "all";
             currentSort = "default";
             sortSelect.value = "default";
             categoryTabs.querySelectorAll(".cat-pill").forEach(p => {
                 p.classList.toggle("active", p.dataset.category === "all");
             });
+            if (budgetPills) {
+                budgetPills.querySelectorAll(".b-pill").forEach(b => {
+                    b.classList.toggle("active", b.dataset.budget === "all");
+                });
+            }
             renderProducts();
         });
     }
@@ -520,15 +547,6 @@ function setupEventListeners() {
         });
     });
 
-    // Scroll header styling
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 40) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    });
-
     // ESC key closes modals
     window.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
@@ -536,9 +554,16 @@ function setupEventListeners() {
             closeCart();
         }
     });
+
+    // Back to top click
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
 }
 
-// RENDER PRODUCTS WITH REAL IMAGES
+// RENDER PRODUCTS WITH REAL IMAGES & DYNAMIC BADGES
 function renderProducts() {
     let filtered = PRODUCTS.filter(p => {
         const matchesCategory = currentCategory === "all" || p.category === currentCategory;
@@ -546,7 +571,17 @@ function renderProducts() {
             p.name.toLowerCase().includes(currentSearch) || 
             p.role.toLowerCase().includes(currentSearch) ||
             (p.brand && p.brand.toLowerCase().includes(currentSearch));
-        return matchesCategory && matchesSearch;
+
+        let matchesBudget = true;
+        if (currentBudget === "under10k") {
+            matchesBudget = p.price !== null && p.price < 10000;
+        } else if (currentBudget === "10k25k") {
+            matchesBudget = p.price !== null && p.price >= 10000 && p.price <= 25000;
+        } else if (currentBudget === "above25k") {
+            matchesBudget = p.price !== null && p.price > 25000;
+        }
+
+        return matchesCategory && matchesSearch && matchesBudget;
     });
 
     // Sort
@@ -593,6 +628,10 @@ function renderProducts() {
                 </div>
 
                 <div class="product-content">
+                    <div class="stock-badge">
+                        <span class="stock-dot"></span> En Stock - Expédition 24h
+                    </div>
+
                     <h3 class="product-title" onclick="openProductModal('${product.id}')" style="cursor: pointer;">${product.name}</h3>
                     <p class="product-role">${product.role}</p>
 
@@ -606,7 +645,7 @@ function renderProducts() {
                             ${formattedPrice}
                         </div>
                         <div class="card-actions">
-                            <button class="btn-card-cart" onclick="addToCart('${product.id}')" title="Ajouter au devis/panier">
+                            <button class="btn-card-cart" onclick="addToCart('${product.id}', this)" title="Ajouter au devis/panier">
                                 <i class="fa-solid fa-cart-plus"></i>
                             </button>
                             <a href="https://wa.me/2250715032798?text=${waMessage}" target="_blank" class="btn-card-whatsapp" title="Commander directement sur WhatsApp">
@@ -618,6 +657,8 @@ function renderProducts() {
             </div>
         `;
     }).join("");
+
+    init3DTilt();
 }
 
 // FORMAT XOF
@@ -640,7 +681,7 @@ function getCategoryName(cat) {
     return map[cat] || "Machine";
 }
 
-// EXTERNAL CATEGORY FILTER TRIGGER (From Footer)
+// EXTERNAL CATEGORY FILTER TRIGGER
 window.filterByCategory = function(category) {
     currentCategory = category;
     categoryTabs.querySelectorAll(".cat-pill").forEach(p => {
@@ -706,8 +747,8 @@ function closeModal() {
     document.body.style.overflow = "";
 }
 
-// CART / ORDER SYSTEM
-window.addToCart = function(productId) {
+// CART & DYNAMIC FLYING ANIMATION
+window.addToCart = function(productId, triggerBtn) {
     const product = PRODUCTS.find(p => p.id === productId);
     if (!product) return;
 
@@ -724,11 +765,40 @@ window.addToCart = function(productId) {
         });
     }
 
+    if (triggerBtn) {
+        animateFlyToCart(triggerBtn);
+    }
+
     saveCartToStorage();
     updateCartCount();
     renderCart();
     showToast(`"${product.name}" a été ajouté à votre panier`);
 };
+
+function animateFlyToCart(button) {
+    const btnRect = button.getBoundingClientRect();
+    const cartRect = openCartBtn.getBoundingClientRect();
+
+    const ball = document.createElement("div");
+    ball.className = "flying-ball";
+    ball.style.top = `${btnRect.top + btnRect.height / 2 - 14}px`;
+    ball.style.left = `${btnRect.left + btnRect.width / 2 - 14}px`;
+    document.body.appendChild(ball);
+
+    // Force reflow
+    void ball.offsetWidth;
+
+    ball.style.top = `${cartRect.top + cartRect.height / 2 - 14}px`;
+    ball.style.left = `${cartRect.left + cartRect.width / 2 - 14}px`;
+    ball.style.transform = "scale(0.3)";
+    ball.style.opacity = "0.7";
+
+    setTimeout(() => {
+        ball.remove();
+        openCartBtn.classList.add("cart-bounce");
+        setTimeout(() => openCartBtn.classList.remove("cart-bounce"), 400);
+    }, 700);
+}
 
 function updateCartCount() {
     const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
@@ -872,4 +942,182 @@ function showToast(msg) {
         toast.style.transition = "all 0.3s ease";
         setTimeout(() => toast.remove(), 300);
     }, 2800);
+}
+
+// 1. DYNAMIC INDUSTRIAL SPARKS SYSTEM (Hero Canvas)
+function initSparks() {
+    const canvas = document.getElementById("sparksCanvas");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+
+    let width = (canvas.width = canvas.parentElement.offsetWidth);
+    let height = (canvas.height = canvas.parentElement.offsetHeight);
+
+    window.addEventListener("resize", () => {
+        width = canvas.width = canvas.parentElement.offsetWidth;
+        height = canvas.height = canvas.parentElement.offsetHeight;
+    });
+
+    const sparks = [];
+    const maxSparks = 45;
+
+    class Spark {
+        constructor() {
+            this.reset();
+        }
+        reset() {
+            this.x = Math.random() * width;
+            this.y = height + Math.random() * 50;
+            this.vx = (Math.random() - 0.5) * 1.5;
+            this.vy = -(Math.random() * 2.5 + 1.2);
+            this.size = Math.random() * 2.5 + 1;
+            this.alpha = Math.random() * 0.8 + 0.2;
+            this.decay = Math.random() * 0.008 + 0.004;
+            this.color = Math.random() > 0.3 ? "#ffc107" : "#ffd43b";
+        }
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            this.alpha -= this.decay;
+            if (this.alpha <= 0 || this.y < 0) {
+                this.reset();
+            }
+        }
+        draw() {
+            ctx.save();
+            ctx.globalAlpha = this.alpha;
+            ctx.fillStyle = this.color;
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+        }
+    }
+
+    for (let i = 0; i < maxSparks; i++) {
+        sparks.push(new Spark());
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        sparks.forEach(s => {
+            s.update();
+            s.draw();
+        });
+        requestAnimationFrame(animate);
+    }
+    animate();
+}
+
+// 2. SCROLL PROGRESS BAR & BACK TO TOP DYNAMICS
+function initScrollDynamics() {
+    const circle = document.querySelector(".progress-ring-circle");
+    const circumference = 132;
+
+    window.addEventListener("scroll", () => {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (window.scrollY / (docHeight || 1)) * 100;
+
+        // Progress bar
+        if (scrollProgressBar) {
+            scrollProgressBar.style.width = `${scrolled}%`;
+        }
+
+        // Header style
+        if (window.scrollY > 40) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+        // Back to top button
+        if (backToTopBtn) {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add("visible");
+            } else {
+                backToTopBtn.classList.remove("visible");
+            }
+
+            if (circle) {
+                const offset = circumference - (circumference * scrolled) / 100;
+                circle.style.strokeDashoffset = Math.max(0, offset);
+            }
+        }
+    });
+}
+
+// 3. ANIMATED NUMBER COUNTERS (Intersection Observer)
+function initCounters() {
+    const counterElements = document.querySelectorAll(".count-up");
+    if (!counterElements.length) return;
+
+    let started = false;
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !started) {
+                started = true;
+                counterElements.forEach(el => {
+                    const target = parseInt(el.dataset.target, 10);
+                    const suffix = el.dataset.suffix || "";
+                    let current = 0;
+                    const duration = 1800;
+                    const stepTime = Math.abs(Math.floor(duration / target));
+
+                    const timer = setInterval(() => {
+                        current += Math.ceil(target / 45);
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        el.textContent = `${current}${suffix}`;
+                    }, stepTime);
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+
+    const heroStats = document.getElementById("heroStats");
+    if (heroStats) observer.observe(heroStats);
+}
+
+// 4. FAQ ACCORDION
+function initFaq() {
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach(item => {
+        const questionBtn = item.querySelector(".faq-question");
+        questionBtn.addEventListener("click", () => {
+            const isActive = item.classList.contains("active");
+            faqItems.forEach(i => i.classList.remove("active"));
+            if (!isActive) {
+                item.classList.add("active");
+            }
+        });
+    });
+}
+
+// 5. 3D CARD HOVER TILT (Desktop only)
+function init3DTilt() {
+    if (window.innerWidth < 992) return;
+    const cards = document.querySelectorAll(".product-card");
+
+    cards.forEach(card => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -6;
+            const rotateY = ((x - centerX) / centerX) * 6;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
+        });
+    });
 }
