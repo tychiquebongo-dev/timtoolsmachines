@@ -479,7 +479,7 @@ function setupEventListeners() {
     categoryTabs.addEventListener("click", (e) => {
         const btn = e.target.closest(".cat-pill");
         if (!btn) return;
-        
+
         categoryTabs.querySelectorAll(".cat-pill").forEach(p => p.classList.remove("active"));
         btn.classList.add("active");
         currentCategory = btn.dataset.category;
@@ -567,8 +567,8 @@ function setupEventListeners() {
 function renderProducts() {
     let filtered = PRODUCTS.filter(p => {
         const matchesCategory = currentCategory === "all" || p.category === currentCategory;
-        const matchesSearch = !currentSearch || 
-            p.name.toLowerCase().includes(currentSearch) || 
+        const matchesSearch = !currentSearch ||
+            p.name.toLowerCase().includes(currentSearch) ||
             p.role.toLowerCase().includes(currentSearch) ||
             (p.brand && p.brand.toLowerCase().includes(currentSearch));
 
@@ -682,7 +682,7 @@ function getCategoryName(cat) {
 }
 
 // EXTERNAL CATEGORY FILTER TRIGGER
-window.filterByCategory = function(category) {
+window.filterByCategory = function (category) {
     currentCategory = category;
     categoryTabs.querySelectorAll(".cat-pill").forEach(p => {
         p.classList.toggle("active", p.dataset.category === category);
@@ -691,7 +691,7 @@ window.filterByCategory = function(category) {
 };
 
 // MODAL HANDLING WITH REAL IMAGE
-window.openProductModal = function(productId) {
+window.openProductModal = function (productId) {
     const product = PRODUCTS.find(p => p.id === productId);
     if (!product) return;
 
@@ -747,98 +747,98 @@ function closeModal() {
     document.body.style.overflow = "";
 }
 
-// CART & DYNAMIC FLYING ANIMATION
-window.addToCart = function(productId, triggerBtn) {
-    const product = PRODUCTS.find(p => p.id === productId);
-    if (!product) return;
+    // CART & DYNAMIC FLYING ANIMATION
+    window.addToCart = function (productId, triggerBtn) {
+        const product = PRODUCTS.find(p => p.id === productId);
+        if (!product) return;
 
-    const existingIndex = cart.findIndex(item => item.id === productId);
-    if (existingIndex > -1) {
-        cart[existingIndex].qty += 1;
-    } else {
-        cart.push({
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            image: product.image,
-            qty: 1
-        });
+        const existingIndex = cart.findIndex(item => item.id === productId);
+        if (existingIndex > -1) {
+            cart[existingIndex].qty += 1;
+        } else {
+            cart.push({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                qty: 1
+            });
+        }
+
+        if (triggerBtn) {
+            animateFlyToCart(triggerBtn);
+        }
+
+        saveCartToStorage();
+        updateCartCount();
+        renderCart();
+        showToast(`"${product.name}" a été ajouté à votre panier`);
+    };
+
+    function animateFlyToCart(button) {
+        const btnRect = button.getBoundingClientRect();
+        const cartRect = openCartBtn.getBoundingClientRect();
+
+        const ball = document.createElement("div");
+        ball.className = "flying-ball";
+        ball.style.top = `${btnRect.top + btnRect.height / 2 - 14}px`;
+        ball.style.left = `${btnRect.left + btnRect.width / 2 - 14}px`;
+        document.body.appendChild(ball);
+
+        // Force reflow
+        void ball.offsetWidth;
+
+        ball.style.top = `${cartRect.top + cartRect.height / 2 - 14}px`;
+        ball.style.left = `${cartRect.left + cartRect.width / 2 - 14}px`;
+        ball.style.transform = "scale(0.3)";
+        ball.style.opacity = "0.7";
+
+        setTimeout(() => {
+            ball.remove();
+            openCartBtn.classList.add("cart-bounce");
+            setTimeout(() => openCartBtn.classList.remove("cart-bounce"), 400);
+        }, 700);
     }
 
-    if (triggerBtn) {
-        animateFlyToCart(triggerBtn);
+    function updateCartCount() {
+        const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+        cartCountBadge.textContent = totalCount;
     }
 
-    saveCartToStorage();
-    updateCartCount();
-    renderCart();
-    showToast(`"${product.name}" a été ajouté à votre panier`);
-};
+    function openCart() {
+        renderCart();
+        cartDrawer.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
 
-function animateFlyToCart(button) {
-    const btnRect = button.getBoundingClientRect();
-    const cartRect = openCartBtn.getBoundingClientRect();
+    function closeCart() {
+        cartDrawer.classList.remove("active");
+        document.body.style.overflow = "";
+    }
 
-    const ball = document.createElement("div");
-    ball.className = "flying-ball";
-    ball.style.top = `${btnRect.top + btnRect.height / 2 - 14}px`;
-    ball.style.left = `${btnRect.left + btnRect.width / 2 - 14}px`;
-    document.body.appendChild(ball);
-
-    // Force reflow
-    void ball.offsetWidth;
-
-    ball.style.top = `${cartRect.top + cartRect.height / 2 - 14}px`;
-    ball.style.left = `${cartRect.left + cartRect.width / 2 - 14}px`;
-    ball.style.transform = "scale(0.3)";
-    ball.style.opacity = "0.7";
-
-    setTimeout(() => {
-        ball.remove();
-        openCartBtn.classList.add("cart-bounce");
-        setTimeout(() => openCartBtn.classList.remove("cart-bounce"), 400);
-    }, 700);
-}
-
-function updateCartCount() {
-    const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
-    cartCountBadge.textContent = totalCount;
-}
-
-function openCart() {
-    renderCart();
-    cartDrawer.classList.add("active");
-    document.body.style.overflow = "hidden";
-}
-
-function closeCart() {
-    cartDrawer.classList.remove("active");
-    document.body.style.overflow = "";
-}
-
-function renderCart() {
-    if (cart.length === 0) {
-        drawerItems.innerHTML = `
+    function renderCart() {
+        if (cart.length === 0) {
+            drawerItems.innerHTML = `
             <div class="drawer-empty">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <h4>Votre panier est vide</h4>
                 <p>Découvrez notre catalogue et ajoutez les machines de votre choix.</p>
             </div>
         `;
-        drawerTotalAmount.textContent = "0 XOF";
-        return;
-    }
+            drawerTotalAmount.textContent = "0 XOF";
+            return;
+        }
 
-    let total = 0;
-    drawerItems.innerHTML = cart.map(item => {
-        const itemTotal = item.price !== null ? item.price * item.qty : null;
-        if (itemTotal !== null) total += itemTotal;
+        let total = 0;
+        drawerItems.innerHTML = cart.map(item => {
+            const itemTotal = item.price !== null ? item.price * item.qty : null;
+            if (itemTotal !== null) total += itemTotal;
 
-        const priceText = item.price !== null
-            ? `${formatXOF(item.price)} XOF`
-            : "Sur devis";
+            const priceText = item.price !== null
+                ? `${formatXOF(item.price)} XOF`
+                : "Sur devis";
 
-        return `
+            return `
             <div class="cart-item">
                 <img src="${item.image || 'images/' + item.id + '.jpg'}" alt="${item.name}" class="cart-item-thumb" onerror="this.style.display='none';" />
                 <div class="ci-details">
@@ -855,269 +855,269 @@ function renderCart() {
                 </button>
             </div>
         `;
-    }).join("");
+        }).join("");
 
-    drawerTotalAmount.textContent = `${formatXOF(total)} XOF`;
-}
+        drawerTotalAmount.textContent = `${formatXOF(total)} XOF`;
+    }
 
-window.changeQty = function(id, delta) {
-    const item = cart.find(i => i.id === id);
-    if (!item) return;
+    window.changeQty = function (id, delta) {
+        const item = cart.find(i => i.id === id);
+        if (!item) return;
 
-    item.qty += delta;
-    if (item.qty <= 0) {
+        item.qty += delta;
+        if (item.qty <= 0) {
+            cart = cart.filter(i => i.id !== id);
+        }
+
+        saveCartToStorage();
+        updateCartCount();
+        renderCart();
+    };
+
+    window.removeFromCart = function (id) {
         cart = cart.filter(i => i.id !== id);
+        saveCartToStorage();
+        updateCartCount();
+        renderCart();
+        showToast("Produit retiré du panier");
+    };
+
+    function clearCart() {
+        if (cart.length === 0) return;
+        cart = [];
+        saveCartToStorage();
+        updateCartCount();
+        renderCart();
+        showToast("Panier vidé");
     }
 
-    saveCartToStorage();
-    updateCartCount();
-    renderCart();
-};
+    function sendWhatsAppCartOrder() {
+        if (cart.length === 0) {
+            showToast("Votre panier est vide !");
+            return;
+        }
 
-window.removeFromCart = function(id) {
-    cart = cart.filter(i => i.id !== id);
-    saveCartToStorage();
-    updateCartCount();
-    renderCart();
-    showToast("Produit retiré du panier");
-};
+        let message = "Bonjour Tim Tools Machines,\n\nJe souhaite passer commande pour le matériel suivant :\n";
+        let total = 0;
 
-function clearCart() {
-    if (cart.length === 0) return;
-    cart = [];
-    saveCartToStorage();
-    updateCartCount();
-    renderCart();
-    showToast("Panier vidé");
-}
+        cart.forEach((item, index) => {
+            const priceStr = item.price !== null ? `${formatXOF(item.price)} XOF` : "Sur devis";
+            message += `${index + 1}. *${item.name}* x${item.qty} (${priceStr})\n`;
+            if (item.price !== null) {
+                total += item.price * item.qty;
+            }
+        });
 
-function sendWhatsAppCartOrder() {
-    if (cart.length === 0) {
-        showToast("Votre panier est vide !");
-        return;
+        message += `\n*TOTAL ESTIMÉ : ${formatXOF(total)} XOF*\n\nMerci de me contacter pour valider la disponibilité et programmer la livraison.`;
+
+        const encoded = encodeURIComponent(message);
+        window.open(`https://wa.me/2250715032798?text=${encoded}`, "_blank");
     }
 
-    let message = "Bonjour Tim Tools Machines,\n\nJe souhaite passer commande pour le matériel suivant :\n";
-    let total = 0;
-
-    cart.forEach((item, index) => {
-        const priceStr = item.price !== null ? `${formatXOF(item.price)} XOF` : "Sur devis";
-        message += `${index + 1}. *${item.name}* x${item.qty} (${priceStr})\n`;
-        if (item.price !== null) {
-            total += item.price * item.qty;
-        }
-    });
-
-    message += `\n*TOTAL ESTIMÉ : ${formatXOF(total)} XOF*\n\nMerci de me contacter pour valider la disponibilité et programmer la livraison.`;
-
-    const encoded = encodeURIComponent(message);
-    window.open(`https://wa.me/2250715032798?text=${encoded}`, "_blank");
-}
-
-function saveCartToStorage() {
-    localStorage.setItem("timtools_cart", JSON.stringify(cart));
-}
-
-function loadCartFromStorage() {
-    try {
-        const saved = localStorage.getItem("timtools_cart");
-        if (saved) {
-            cart = JSON.parse(saved);
-        }
-    } catch (e) {
-        console.warn("Storage error", e);
+    function saveCartToStorage() {
+        localStorage.setItem("timtools_cart", JSON.stringify(cart));
     }
-}
 
-// TOAST NOTIFICATIONS
-function showToast(msg) {
-    const toast = document.createElement("div");
-    toast.className = "toast";
-    toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${msg}</span>`;
-    toastContainer.appendChild(toast);
-
-    setTimeout(() => {
-        toast.style.opacity = "0";
-        toast.style.transform = "translateY(20px)";
-        toast.style.transition = "all 0.3s ease";
-        setTimeout(() => toast.remove(), 300);
-    }, 2800);
-}
-
-// 1. DYNAMIC INDUSTRIAL SPARKS SYSTEM (Hero Canvas)
-function initSparks() {
-    const canvas = document.getElementById("sparksCanvas");
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-
-    let width = (canvas.width = canvas.parentElement.offsetWidth);
-    let height = (canvas.height = canvas.parentElement.offsetHeight);
-
-    window.addEventListener("resize", () => {
-        width = canvas.width = canvas.parentElement.offsetWidth;
-        height = canvas.height = canvas.parentElement.offsetHeight;
-    });
-
-    const sparks = [];
-    const maxSparks = 45;
-
-    class Spark {
-        constructor() {
-            this.reset();
+    function loadCartFromStorage() {
+        try {
+            const saved = localStorage.getItem("timtools_cart");
+            if (saved) {
+                cart = JSON.parse(saved);
+            }
+        } catch (e) {
+            console.warn("Storage error", e);
         }
-        reset() {
-            this.x = Math.random() * width;
-            this.y = height + Math.random() * 50;
-            this.vx = (Math.random() - 0.5) * 1.5;
-            this.vy = -(Math.random() * 2.5 + 1.2);
-            this.size = Math.random() * 2.5 + 1;
-            this.alpha = Math.random() * 0.8 + 0.2;
-            this.decay = Math.random() * 0.008 + 0.004;
-            this.color = Math.random() > 0.3 ? "#ffc107" : "#ffd43b";
-        }
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            this.alpha -= this.decay;
-            if (this.alpha <= 0 || this.y < 0) {
+    }
+
+    // TOAST NOTIFICATIONS
+    function showToast(msg) {
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${msg}</span>`;
+        toastContainer.appendChild(toast);
+
+        setTimeout(() => {
+            toast.style.opacity = "0";
+            toast.style.transform = "translateY(20px)";
+            toast.style.transition = "all 0.3s ease";
+            setTimeout(() => toast.remove(), 300);
+        }, 2800);
+    }
+
+    // 1. DYNAMIC INDUSTRIAL SPARKS SYSTEM (Hero Canvas)
+    function initSparks() {
+        const canvas = document.getElementById("sparksCanvas");
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+
+        let width = (canvas.width = canvas.parentElement.offsetWidth);
+        let height = (canvas.height = canvas.parentElement.offsetHeight);
+
+        window.addEventListener("resize", () => {
+            width = canvas.width = canvas.parentElement.offsetWidth;
+            height = canvas.height = canvas.parentElement.offsetHeight;
+        });
+
+        const sparks = [];
+        const maxSparks = 45;
+
+        class Spark {
+            constructor() {
                 this.reset();
             }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = height + Math.random() * 50;
+                this.vx = (Math.random() - 0.5) * 1.5;
+                this.vy = -(Math.random() * 2.5 + 1.2);
+                this.size = Math.random() * 2.5 + 1;
+                this.alpha = Math.random() * 0.8 + 0.2;
+                this.decay = Math.random() * 0.008 + 0.004;
+                this.color = Math.random() > 0.3 ? "#ffc107" : "#ffd43b";
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.alpha -= this.decay;
+                if (this.alpha <= 0 || this.y < 0) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
         }
-        draw() {
-            ctx.save();
-            ctx.globalAlpha = this.alpha;
-            ctx.fillStyle = this.color;
-            ctx.shadowBlur = 8;
-            ctx.shadowColor = this.color;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.restore();
+
+        for (let i = 0; i < maxSparks; i++) {
+            sparks.push(new Spark());
         }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            sparks.forEach(s => {
+                s.update();
+                s.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
     }
 
-    for (let i = 0; i < maxSparks; i++) {
-        sparks.push(new Spark());
-    }
+    // 2. SCROLL PROGRESS BAR & BACK TO TOP DYNAMICS
+    function initScrollDynamics() {
+        const circle = document.querySelector(".progress-ring-circle");
+        const circumference = 132;
 
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-        sparks.forEach(s => {
-            s.update();
-            s.draw();
-        });
-        requestAnimationFrame(animate);
-    }
-    animate();
-}
+        window.addEventListener("scroll", () => {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / (docHeight || 1)) * 100;
 
-// 2. SCROLL PROGRESS BAR & BACK TO TOP DYNAMICS
-function initScrollDynamics() {
-    const circle = document.querySelector(".progress-ring-circle");
-    const circumference = 132;
+            // Progress bar
+            if (scrollProgressBar) {
+                scrollProgressBar.style.width = `${scrolled}%`;
+            }
 
-    window.addEventListener("scroll", () => {
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrolled = (window.scrollY / (docHeight || 1)) * 100;
-
-        // Progress bar
-        if (scrollProgressBar) {
-            scrollProgressBar.style.width = `${scrolled}%`;
-        }
-
-        // Header style
-        if (window.scrollY > 40) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-
-        // Back to top button
-        if (backToTopBtn) {
-            if (window.scrollY > 400) {
-                backToTopBtn.classList.add("visible");
+            // Header style
+            if (window.scrollY > 40) {
+                header.classList.add("scrolled");
             } else {
-                backToTopBtn.classList.remove("visible");
+                header.classList.remove("scrolled");
             }
 
-            if (circle) {
-                const offset = circumference - (circumference * scrolled) / 100;
-                circle.style.strokeDashoffset = Math.max(0, offset);
-            }
-        }
-    });
-}
+            // Back to top button
+            if (backToTopBtn) {
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.add("visible");
+                } else {
+                    backToTopBtn.classList.remove("visible");
+                }
 
-// 3. ANIMATED NUMBER COUNTERS (Intersection Observer)
-function initCounters() {
-    const counterElements = document.querySelectorAll(".count-up");
-    if (!counterElements.length) return;
-
-    let started = false;
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !started) {
-                started = true;
-                counterElements.forEach(el => {
-                    const target = parseInt(el.dataset.target, 10);
-                    const suffix = el.dataset.suffix || "";
-                    let current = 0;
-                    const duration = 1800;
-                    const stepTime = Math.abs(Math.floor(duration / target));
-
-                    const timer = setInterval(() => {
-                        current += Math.ceil(target / 45);
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
-                        }
-                        el.textContent = `${current}${suffix}`;
-                    }, stepTime);
-                });
+                if (circle) {
+                    const offset = circumference - (circumference * scrolled) / 100;
+                    circle.style.strokeDashoffset = Math.max(0, offset);
+                }
             }
         });
-    }, { threshold: 0.3 });
+    }
 
-    const heroStats = document.getElementById("heroStats");
-    if (heroStats) observer.observe(heroStats);
-}
+    // 3. ANIMATED NUMBER COUNTERS (Intersection Observer)
+    function initCounters() {
+        const counterElements = document.querySelectorAll(".count-up");
+        if (!counterElements.length) return;
 
-// 4. FAQ ACCORDION
-function initFaq() {
-    const faqItems = document.querySelectorAll(".faq-item");
-    faqItems.forEach(item => {
-        const questionBtn = item.querySelector(".faq-question");
-        questionBtn.addEventListener("click", () => {
-            const isActive = item.classList.contains("active");
-            faqItems.forEach(i => i.classList.remove("active"));
-            if (!isActive) {
-                item.classList.add("active");
-            }
+        let started = false;
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !started) {
+                    started = true;
+                    counterElements.forEach(el => {
+                        const target = parseInt(el.dataset.target, 10);
+                        const suffix = el.dataset.suffix || "";
+                        let current = 0;
+                        const duration = 1800;
+                        const stepTime = Math.abs(Math.floor(duration / target));
+
+                        const timer = setInterval(() => {
+                            current += Math.ceil(target / 45);
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            el.textContent = `${current}${suffix}`;
+                        }, stepTime);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const heroStats = document.getElementById("heroStats");
+        if (heroStats) observer.observe(heroStats);
+    }
+
+    // 4. FAQ ACCORDION
+    function initFaq() {
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach(item => {
+            const questionBtn = item.querySelector(".faq-question");
+            questionBtn.addEventListener("click", () => {
+                const isActive = item.classList.contains("active");
+                faqItems.forEach(i => i.classList.remove("active"));
+                if (!isActive) {
+                    item.classList.add("active");
+                }
+            });
         });
-    });
-}
+    }
 
-// 5. 3D CARD HOVER TILT (Desktop only)
-function init3DTilt() {
-    if (window.innerWidth < 992) return;
-    const cards = document.querySelectorAll(".product-card");
+    // 5. 3D CARD HOVER TILT (Desktop only)
+    function init3DTilt() {
+        if (window.innerWidth < 992) return;
+        const cards = document.querySelectorAll(".product-card");
 
-    cards.forEach(card => {
-        card.addEventListener("mousemove", (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -6;
-            const rotateY = ((x - centerX) / centerX) * 6;
+        cards.forEach(card => {
+            card.addEventListener("mousemove", (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -6;
+                const rotateY = ((x - centerX) / centerX) * 6;
 
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+            });
+
+            card.addEventListener("mouseleave", () => {
+                card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
+            });
         });
-
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
-        });
-    });
-}
+    }
