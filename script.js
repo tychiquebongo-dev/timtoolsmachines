@@ -83,27 +83,27 @@ const PRODUCTS = [
     },
     {
         "id": "p4",
-        "name": "Plateau outillage clés mixtes & pinces atelier",
-        "name_en": "Workshop Combination Wrenches & Pliers Tray",
+        "name": "Coffret à douilles et cliquet 46 pièces UPSPIRIT",
+        "name_en": "46-Piece Ratchet, Sockets & Bits Tool Set UPSPIRIT",
         "category": "outillage",
         "brand": "UPSPIRIT",
         "image": "images/p4.jpg",
         "icon": "fa-solid fa-wrench",
-        "role_badge": "Clés mixtes & Pinces bi-matière",
-        "role_badge_en": "Wrenches & Dual-Material Pliers",
-        "role": "Plateau thermoformé d'atelier comprenant un jeu de clés mixtes plates et à œil en acier chromé et 5 pinces professionnelles bi-matière (coupante, clé à molette, multiprise, bec long et universelle).",
-        "role_en": "Heavy-duty molded workshop tray featuring a set of chrome combination wrenches and 5 dual-material mechanic pliers (diagonal cutter, adjustable wrench, water pump plier, long nose, and combination plier).",
+        "role_badge": "Coffret cliquet 1/4\" & 46 pcs",
+        "role_badge_en": "1/4\" Ratchet & 46-Pc Socket Set",
+        "role": "Coffret antichoc jaune et noir de marque officielle UPSPIRIT contenant 46 pièces : cliquet réversible 1/4\" ergonomique, douilles acier chrome-vanadium 4 à 14 mm, poignée coulissante en T, rallonges, cardan et assortiment complet d'embouts Torx, Hex, plats et Phillips.",
+        "role_en": "Genuine UPSPIRIT 46-piece shockproof mechanics set: 1/4\" quick-release reversible ratchet, 4 to 14mm CR-V steel sockets, sliding T-bar, extensions, universal joint and full Torx/Hex/Phillips bit collection.",
         "specs": [
-            "Jeu de clés mixtes chromées",
-            "5 pinces d'atelier bi-matière",
-            "Clé à molette & multiprise",
-            "Plateau thermoformé rigide"
+            "Marque officielle UPSPIRIT",
+            "Cliquet réversible 1/4\" ergonomique",
+            "Douilles 4 à 14 mm & rallonges",
+            "Embouts de précision & coffret rigide"
         ],
         "specs_en": [
-            "Chrome combination wrenches",
-            "5 dual-material pliers",
-            "Adjustable wrench & pump plier",
-            "Rigid molded storage tray"
+            "Official UPSPIRIT brand",
+            "Ergonomic 1/4\" quick-release ratchet",
+            "4 to 14mm sockets & extension bars",
+            "Precision bits & rugged carry case"
         ]
     },
     {
