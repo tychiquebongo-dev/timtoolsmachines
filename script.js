@@ -1184,7 +1184,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // SETUP LISTENERS
 function setupEventListeners() {
-    
+
     // Language switcher buttons
     document.addEventListener("click", (e) => {
         const langBtn = e.target.closest(".lang-btn");
@@ -1307,7 +1307,7 @@ function setupEventListeners() {
 function renderProducts() {
     let filtered = PRODUCTS.filter(p => {
         const matchesCategory = currentCategory === "all" || p.category === currentCategory;
-        
+
         const titleFr = (p.name || "").toLowerCase();
         const titleEn = (p.name_en || "").toLowerCase();
         const roleFr = (p.role || "").toLowerCase();
@@ -1339,8 +1339,8 @@ function renderProducts() {
 
     // Update Counter
     if (resultsCount) {
-        resultsCount.innerHTML = filtered.length === 1 
-            ? t("results_count_single") 
+        resultsCount.innerHTML = filtered.length === 1
+            ? t("results_count_single")
             : t("results_count_multi").replace("{count}", filtered.length);
     }
 
@@ -1447,12 +1447,12 @@ function getCategoryName(cat) {
     return t(key, "Machine");
 }
 
-window.applyLanguage = function(lang) {
+window.applyLanguage = function (lang) {
     if (lang !== "fr" && lang !== "en") lang = "fr";
     currentLang = lang;
     try {
         localStorage.setItem("timtools_lang", lang);
-    } catch (e) {}
+    } catch (e) { }
 
     document.documentElement.lang = lang;
 
@@ -1571,101 +1571,101 @@ function closeModal() {
 }
 
 
-    // CART & DYNAMIC FLYING ANIMATION
-    window.addToCart = function (productId, triggerBtn) {
-        const product = PRODUCTS.find(p => p.id === productId);
-        if (!product) return;
+// CART & DYNAMIC FLYING ANIMATION
+window.addToCart = function (productId, triggerBtn) {
+    const product = PRODUCTS.find(p => p.id === productId);
+    if (!product) return;
 
-        const existingIndex = cart.findIndex(item => item.id === productId);
-        if (existingIndex > -1) {
-            cart[existingIndex].qty += 1;
-        } else {
-            cart.push({
-                id: product.id,
-                name: product.name,
-                price: product.price,
-                image: product.image,
-                qty: 1
-            });
-        }
-
-        if (triggerBtn) {
-            animateFlyToCart(triggerBtn);
-        }
-
-        saveCartToStorage();
-        updateCartCount();
-        renderCart();
-        showToast(t("toast_added").replace("{name}", getProductTitle(product)));
-    };
-
-    function animateFlyToCart(button) {
-        const btnRect = button.getBoundingClientRect();
-        const cartRect = openCartBtn.getBoundingClientRect();
-
-        const ball = document.createElement("div");
-        ball.className = "flying-ball";
-        ball.style.top = `${btnRect.top + btnRect.height / 2 - 14}px`;
-        ball.style.left = `${btnRect.left + btnRect.width / 2 - 14}px`;
-        document.body.appendChild(ball);
-
-        // Force reflow
-        void ball.offsetWidth;
-
-        ball.style.top = `${cartRect.top + cartRect.height / 2 - 14}px`;
-        ball.style.left = `${cartRect.left + cartRect.width / 2 - 14}px`;
-        ball.style.transform = "scale(0.3)";
-        ball.style.opacity = "0.7";
-
-        setTimeout(() => {
-            ball.remove();
-            openCartBtn.classList.add("cart-bounce");
-            setTimeout(() => openCartBtn.classList.remove("cart-bounce"), 400);
-        }, 700);
+    const existingIndex = cart.findIndex(item => item.id === productId);
+    if (existingIndex > -1) {
+        cart[existingIndex].qty += 1;
+    } else {
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            qty: 1
+        });
     }
 
-    function updateCartCount() {
-        const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
-        cartCountBadge.textContent = totalCount;
+    if (triggerBtn) {
+        animateFlyToCart(triggerBtn);
     }
 
-    function openCart() {
-        renderCart();
-        cartDrawer.classList.add("active");
-        document.body.style.overflow = "hidden";
-    }
+    saveCartToStorage();
+    updateCartCount();
+    renderCart();
+    showToast(t("toast_added").replace("{name}", getProductTitle(product)));
+};
 
-    function closeCart() {
-        cartDrawer.classList.remove("active");
-        document.body.style.overflow = "";
-    }
+function animateFlyToCart(button) {
+    const btnRect = button.getBoundingClientRect();
+    const cartRect = openCartBtn.getBoundingClientRect();
 
-    
-    function renderCart() {
-        if (cart.length === 0) {
-            drawerItems.innerHTML = `
+    const ball = document.createElement("div");
+    ball.className = "flying-ball";
+    ball.style.top = `${btnRect.top + btnRect.height / 2 - 14}px`;
+    ball.style.left = `${btnRect.left + btnRect.width / 2 - 14}px`;
+    document.body.appendChild(ball);
+
+    // Force reflow
+    void ball.offsetWidth;
+
+    ball.style.top = `${cartRect.top + cartRect.height / 2 - 14}px`;
+    ball.style.left = `${cartRect.left + cartRect.width / 2 - 14}px`;
+    ball.style.transform = "scale(0.3)";
+    ball.style.opacity = "0.7";
+
+    setTimeout(() => {
+        ball.remove();
+        openCartBtn.classList.add("cart-bounce");
+        setTimeout(() => openCartBtn.classList.remove("cart-bounce"), 400);
+    }, 700);
+}
+
+function updateCartCount() {
+    const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+    cartCountBadge.textContent = totalCount;
+}
+
+function openCart() {
+    renderCart();
+    cartDrawer.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeCart() {
+    cartDrawer.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+
+function renderCart() {
+    if (cart.length === 0) {
+        drawerItems.innerHTML = `
             <div class="drawer-empty">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <h4>${t("drawer_empty")}</h4>
                 <p>${t("drawer_empty_desc")}</p>
             </div>
         `;
-            drawerTotalAmount.textContent = "0 XOF";
-            return;
-        }
+        drawerTotalAmount.textContent = "0 XOF";
+        return;
+    }
 
-        let total = 0;
-        drawerItems.innerHTML = cart.map(item => {
-            const product = PRODUCTS.find(p => p.id === item.id) || item;
-            const title = getProductTitle(product);
-            const itemTotal = item.price !== null ? item.price * item.qty : null;
-            if (itemTotal !== null) total += itemTotal;
+    let total = 0;
+    drawerItems.innerHTML = cart.map(item => {
+        const product = PRODUCTS.find(p => p.id === item.id) || item;
+        const title = getProductTitle(product);
+        const itemTotal = item.price !== null ? item.price * item.qty : null;
+        if (itemTotal !== null) total += itemTotal;
 
-            const priceText = item.price !== null
-                ? `${formatXOF(item.price)} XOF`
-                : t("card_quote");
+        const priceText = item.price !== null
+            ? `${formatXOF(item.price)} XOF`
+            : t("card_quote");
 
-            return `
+        return `
             <div class="cart-item">
                 <img src="${item.image || 'images/' + item.id + '.jpg'}" alt="${title}" class="cart-item-thumb" onerror="this.style.display='none';" />
                 <div class="ci-details">
@@ -1682,284 +1682,284 @@ function closeModal() {
                 </button>
             </div>
         `;
-        }).join("");
+    }).join("");
 
-        drawerTotalAmount.textContent = `${formatXOF(total)} XOF`;
-    }
+    drawerTotalAmount.textContent = `${formatXOF(total)} XOF`;
+}
 
 
-    window.changeQty = function (id, delta) {
-        const item = cart.find(i => i.id === id);
-        if (!item) return;
+window.changeQty = function (id, delta) {
+    const item = cart.find(i => i.id === id);
+    if (!item) return;
 
-        item.qty += delta;
-        if (item.qty <= 0) {
-            cart = cart.filter(i => i.id !== id);
-        }
-
-        saveCartToStorage();
-        updateCartCount();
-        renderCart();
-    };
-
-    window.removeFromCart = function (id) {
+    item.qty += delta;
+    if (item.qty <= 0) {
         cart = cart.filter(i => i.id !== id);
-        saveCartToStorage();
-        updateCartCount();
-        renderCart();
-        showToast(t("toast_removed"));
-    };
-
-    function clearCart() {
-        if (cart.length === 0) return;
-        cart = [];
-        saveCartToStorage();
-        updateCartCount();
-        renderCart();
-        showToast(t("toast_cleared"));
     }
 
-    
-    function sendWhatsAppCartOrder() {
-        if (cart.length === 0) {
-            showToast(t("toast_empty"));
-            return;
+    saveCartToStorage();
+    updateCartCount();
+    renderCart();
+};
+
+window.removeFromCart = function (id) {
+    cart = cart.filter(i => i.id !== id);
+    saveCartToStorage();
+    updateCartCount();
+    renderCart();
+    showToast(t("toast_removed"));
+};
+
+function clearCart() {
+    if (cart.length === 0) return;
+    cart = [];
+    saveCartToStorage();
+    updateCartCount();
+    renderCart();
+    showToast(t("toast_cleared"));
+}
+
+
+function sendWhatsAppCartOrder() {
+    if (cart.length === 0) {
+        showToast(t("toast_empty"));
+        return;
+    }
+
+    let total = 0;
+    let message = currentLang === 'en'
+        ? "Hello Tim Tools Machines,\n\nI would like to place an order for the following equipment:\n"
+        : "Bonjour Tim Tools Machines,\n\nJe souhaite passer commande pour le matériel suivant :\n";
+
+    cart.forEach((item, index) => {
+        const product = PRODUCTS.find(p => p.id === item.id) || item;
+        const title = getProductTitle(product);
+        const priceStr = item.price !== null ? `${formatXOF(item.price)} XOF` : t("card_quote");
+        message += `${index + 1}. *${title}* x${item.qty} (${priceStr})\n`;
+        if (item.price !== null) {
+            total += item.price * item.qty;
         }
+    });
 
-        let total = 0;
-        let message = currentLang === 'en'
-            ? "Hello Tim Tools Machines,\n\nI would like to place an order for the following equipment:\n"
-            : "Bonjour Tim Tools Machines,\n\nJe souhaite passer commande pour le matériel suivant :\n";
+    if (currentLang === 'en') {
+        message += `\n*ESTIMATED TOTAL: ${formatXOF(total)} XOF*\n\nPlease contact me to confirm availability and schedule delivery.`;
+    } else {
+        message += `\n*TOTAL ESTIMÉ : ${formatXOF(total)} XOF*\n\nMerci de me contacter pour valider la disponibilité et programmer la livraison.`;
+    }
 
-        cart.forEach((item, index) => {
-            const product = PRODUCTS.find(p => p.id === item.id) || item;
-            const title = getProductTitle(product);
-            const priceStr = item.price !== null ? `${formatXOF(item.price)} XOF` : t("card_quote");
-            message += `${index + 1}. *${title}* x${item.qty} (${priceStr})\n`;
-            if (item.price !== null) {
-                total += item.price * item.qty;
-            }
-        });
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/2250715032798?text=${encoded}`, "_blank");
+}
 
-        if (currentLang === 'en') {
-            message += `\n*ESTIMATED TOTAL: ${formatXOF(total)} XOF*\n\nPlease contact me to confirm availability and schedule delivery.`;
-        } else {
-            message += `\n*TOTAL ESTIMÉ : ${formatXOF(total)} XOF*\n\nMerci de me contacter pour valider la disponibilité et programmer la livraison.`;
+
+function saveCartToStorage() {
+    localStorage.setItem("timtools_cart", JSON.stringify(cart));
+}
+
+function loadCartFromStorage() {
+    try {
+        const saved = localStorage.getItem("timtools_cart");
+        if (saved) {
+            cart = JSON.parse(saved);
         }
-
-        const encoded = encodeURIComponent(message);
-        window.open(`https://wa.me/2250715032798?text=${encoded}`, "_blank");
+    } catch (e) {
+        console.warn("Storage error", e);
     }
+}
 
+// TOAST NOTIFICATIONS
+function showToast(msg) {
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${msg}</span>`;
+    toastContainer.appendChild(toast);
 
-    function saveCartToStorage() {
-        localStorage.setItem("timtools_cart", JSON.stringify(cart));
+    setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateY(20px)";
+        toast.style.transition = "all 0.3s ease";
+        setTimeout(() => toast.remove(), 300);
+    }, 2800);
+}
+
+// 1. DYNAMIC INDUSTRIAL SPARKS SYSTEM (Hero Canvas - Desktop Only for best mobile performance)
+function initSparks() {
+    const canvas = document.getElementById("sparksCanvas");
+    if (!canvas) return;
+    if (window.innerWidth <= 768) {
+        canvas.style.display = "none";
+        return;
     }
+    const ctx = canvas.getContext("2d");
 
-    function loadCartFromStorage() {
-        try {
-            const saved = localStorage.getItem("timtools_cart");
-            if (saved) {
-                cart = JSON.parse(saved);
-            }
-        } catch (e) {
-            console.warn("Storage error", e);
+    let width = (canvas.width = canvas.parentElement.offsetWidth);
+    let height = (canvas.height = canvas.parentElement.offsetHeight);
+
+    window.addEventListener("resize", () => {
+        width = canvas.width = canvas.parentElement.offsetWidth;
+        height = canvas.height = canvas.parentElement.offsetHeight;
+    });
+
+    const sparks = [];
+    const maxSparks = 45;
+
+    class Spark {
+        constructor() {
+            this.reset();
         }
-    }
-
-    // TOAST NOTIFICATIONS
-    function showToast(msg) {
-        const toast = document.createElement("div");
-        toast.className = "toast";
-        toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${msg}</span>`;
-        toastContainer.appendChild(toast);
-
-        setTimeout(() => {
-            toast.style.opacity = "0";
-            toast.style.transform = "translateY(20px)";
-            toast.style.transition = "all 0.3s ease";
-            setTimeout(() => toast.remove(), 300);
-        }, 2800);
-    }
-
-    // 1. DYNAMIC INDUSTRIAL SPARKS SYSTEM (Hero Canvas - Desktop Only for best mobile performance)
-    function initSparks() {
-        const canvas = document.getElementById("sparksCanvas");
-        if (!canvas) return;
-        if (window.innerWidth <= 768) {
-            canvas.style.display = "none";
-            return;
+        reset() {
+            this.x = Math.random() * width;
+            this.y = height + Math.random() * 50;
+            this.vx = (Math.random() - 0.5) * 1.5;
+            this.vy = -(Math.random() * 2.5 + 1.2);
+            this.size = Math.random() * 2.5 + 1;
+            this.alpha = Math.random() * 0.8 + 0.2;
+            this.decay = Math.random() * 0.008 + 0.004;
+            this.color = Math.random() > 0.3 ? "#ffc107" : "#ffd43b";
         }
-        const ctx = canvas.getContext("2d");
-
-        let width = (canvas.width = canvas.parentElement.offsetWidth);
-        let height = (canvas.height = canvas.parentElement.offsetHeight);
-
-        window.addEventListener("resize", () => {
-            width = canvas.width = canvas.parentElement.offsetWidth;
-            height = canvas.height = canvas.parentElement.offsetHeight;
-        });
-
-        const sparks = [];
-        const maxSparks = 45;
-
-        class Spark {
-            constructor() {
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            this.alpha -= this.decay;
+            if (this.alpha <= 0 || this.y < 0) {
                 this.reset();
             }
-            reset() {
-                this.x = Math.random() * width;
-                this.y = height + Math.random() * 50;
-                this.vx = (Math.random() - 0.5) * 1.5;
-                this.vy = -(Math.random() * 2.5 + 1.2);
-                this.size = Math.random() * 2.5 + 1;
-                this.alpha = Math.random() * 0.8 + 0.2;
-                this.decay = Math.random() * 0.008 + 0.004;
-                this.color = Math.random() > 0.3 ? "#ffc107" : "#ffd43b";
-            }
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                this.alpha -= this.decay;
-                if (this.alpha <= 0 || this.y < 0) {
-                    this.reset();
-                }
-            }
-            draw() {
-                ctx.save();
-                ctx.globalAlpha = this.alpha;
-                ctx.fillStyle = this.color;
-                ctx.shadowBlur = 8;
-                ctx.shadowColor = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.restore();
-            }
         }
-
-        for (let i = 0; i < maxSparks; i++) {
-            sparks.push(new Spark());
+        draw() {
+            ctx.save();
+            ctx.globalAlpha = this.alpha;
+            ctx.fillStyle = this.color;
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
         }
-
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-            sparks.forEach(s => {
-                s.update();
-                s.draw();
-            });
-            requestAnimationFrame(animate);
-        }
-        animate();
     }
 
-    // 2. SCROLL PROGRESS BAR & BACK TO TOP DYNAMICS
-    function initScrollDynamics() {
-        const circle = document.querySelector(".progress-ring-circle");
-        const circumference = 132;
+    for (let i = 0; i < maxSparks; i++) {
+        sparks.push(new Spark());
+    }
 
-        window.addEventListener("scroll", () => {
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrolled = (window.scrollY / (docHeight || 1)) * 100;
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        sparks.forEach(s => {
+            s.update();
+            s.draw();
+        });
+        requestAnimationFrame(animate);
+    }
+    animate();
+}
 
-            // Progress bar
-            if (scrollProgressBar) {
-                scrollProgressBar.style.width = `${scrolled}%`;
-            }
+// 2. SCROLL PROGRESS BAR & BACK TO TOP DYNAMICS
+function initScrollDynamics() {
+    const circle = document.querySelector(".progress-ring-circle");
+    const circumference = 132;
 
-            // Header style
-            if (window.scrollY > 40) {
-                header.classList.add("scrolled");
+    window.addEventListener("scroll", () => {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (window.scrollY / (docHeight || 1)) * 100;
+
+        // Progress bar
+        if (scrollProgressBar) {
+            scrollProgressBar.style.width = `${scrolled}%`;
+        }
+
+        // Header style
+        if (window.scrollY > 40) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+        // Back to top button
+        if (backToTopBtn) {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add("visible");
             } else {
-                header.classList.remove("scrolled");
+                backToTopBtn.classList.remove("visible");
             }
 
-            // Back to top button
-            if (backToTopBtn) {
-                if (window.scrollY > 400) {
-                    backToTopBtn.classList.add("visible");
-                } else {
-                    backToTopBtn.classList.remove("visible");
-                }
+            if (circle) {
+                const offset = circumference - (circumference * scrolled) / 100;
+                circle.style.strokeDashoffset = Math.max(0, offset);
+            }
+        }
+    });
+}
 
-                if (circle) {
-                    const offset = circumference - (circumference * scrolled) / 100;
-                    circle.style.strokeDashoffset = Math.max(0, offset);
-                }
+// 3. ANIMATED NUMBER COUNTERS (Intersection Observer)
+function initCounters() {
+    const counterElements = document.querySelectorAll(".count-up");
+    if (!counterElements.length) return;
+
+    let started = false;
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !started) {
+                started = true;
+                counterElements.forEach(el => {
+                    const target = parseInt(el.dataset.target, 10);
+                    const suffix = el.dataset.suffix || "";
+                    let current = 0;
+                    const duration = 1800;
+                    const stepTime = Math.abs(Math.floor(duration / target));
+
+                    const timer = setInterval(() => {
+                        current += Math.ceil(target / 45);
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        el.textContent = `${current}${suffix}`;
+                    }, stepTime);
+                });
             }
         });
-    }
+    }, { threshold: 0.3 });
 
-    // 3. ANIMATED NUMBER COUNTERS (Intersection Observer)
-    function initCounters() {
-        const counterElements = document.querySelectorAll(".count-up");
-        if (!counterElements.length) return;
+    const heroStats = document.getElementById("heroStats");
+    if (heroStats) observer.observe(heroStats);
+}
 
-        let started = false;
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !started) {
-                    started = true;
-                    counterElements.forEach(el => {
-                        const target = parseInt(el.dataset.target, 10);
-                        const suffix = el.dataset.suffix || "";
-                        let current = 0;
-                        const duration = 1800;
-                        const stepTime = Math.abs(Math.floor(duration / target));
-
-                        const timer = setInterval(() => {
-                            current += Math.ceil(target / 45);
-                            if (current >= target) {
-                                current = target;
-                                clearInterval(timer);
-                            }
-                            el.textContent = `${current}${suffix}`;
-                        }, stepTime);
-                    });
-                }
-            });
-        }, { threshold: 0.3 });
-
-        const heroStats = document.getElementById("heroStats");
-        if (heroStats) observer.observe(heroStats);
-    }
-
-    // 4. FAQ ACCORDION
-    function initFaq() {
-        const faqItems = document.querySelectorAll(".faq-item");
-        faqItems.forEach(item => {
-            const questionBtn = item.querySelector(".faq-question");
-            questionBtn.addEventListener("click", () => {
-                const isActive = item.classList.contains("active");
-                faqItems.forEach(i => i.classList.remove("active"));
-                if (!isActive) {
-                    item.classList.add("active");
-                }
-            });
+// 4. FAQ ACCORDION
+function initFaq() {
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach(item => {
+        const questionBtn = item.querySelector(".faq-question");
+        questionBtn.addEventListener("click", () => {
+            const isActive = item.classList.contains("active");
+            faqItems.forEach(i => i.classList.remove("active"));
+            if (!isActive) {
+                item.classList.add("active");
+            }
         });
-    }
+    });
+}
 
-    // 5. 3D CARD HOVER TILT (Desktop only)
-    function init3DTilt() {
-        if (window.innerWidth < 992) return;
-        const cards = document.querySelectorAll(".product-card");
+// 5. 3D CARD HOVER TILT (Desktop only)
+function init3DTilt() {
+    if (window.innerWidth < 992) return;
+    const cards = document.querySelectorAll(".product-card");
 
-        cards.forEach(card => {
-            card.addEventListener("mousemove", (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = ((y - centerY) / centerY) * -6;
-                const rotateY = ((x - centerX) / centerX) * 6;
+    cards.forEach(card => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -6;
+            const rotateY = ((x - centerX) / centerX) * 6;
 
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-            });
-
-            card.addEventListener("mouseleave", () => {
-                card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
-            });
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
         });
-    }
+
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
+        });
+    });
+}
