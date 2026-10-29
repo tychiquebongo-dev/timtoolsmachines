@@ -1772,6 +1772,31 @@ button, input, select {
     font-size: 0.95rem;
     color: #fff;
     font-weight: 500;
+    line-height: 1.45;
+}
+
+.landmark-text {
+    display: inline-block;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    color: var(--yellow-primary);
+    margin-top: 0.4rem;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.map-link:hover {
+    color: #ffd43b;
+    text-decoration: underline;
+    transform: translateX(3px);
 }
 
 .direct-order-box {

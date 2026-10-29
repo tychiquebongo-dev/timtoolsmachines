@@ -71,6 +71,7 @@ timtoolsmachines/
 
 ## 📞 Coordonnées Intégrées
 
+- **Localisation Magasin & Showroom** : Côte d'Ivoire, Abidjan — Angré Les Oscars, en diagonale du Centre Médical Hoffmann
 - **Téléphone Service Client** : `+225 07 89 55 74 42`
 - **WhatsApp Officiel** : `+225 07 15 03 27 98`
 - **Marque Partenaire** : `UPSPIRIT Worldwide`
