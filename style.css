@@ -55,6 +55,9 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
 }
 
 body {
@@ -62,13 +65,32 @@ body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
     position: relative;
     background-image: 
         radial-gradient(rgba(255, 193, 7, 0.04) 1px, transparent 1px),
         radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 40px 40px;
     background-position: 0 0, 20px 20px;
+}
+
+
+/* Structural anti-overflow lock on all main sections */
+.top-bar,
+.header,
+.hero,
+.about-section,
+.main-catalog,
+.advantages-section,
+.testimonials-section,
+.faq-section,
+.contact-section,
+.footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
 }
 
 /* Scroll Progress Bar */
@@ -294,6 +316,7 @@ button, input, select {
     display: flex;
     align-items: center;
     gap: 1.25rem;
+    flex-wrap: wrap;
 }
 
 .top-bar-contact a {
@@ -3164,10 +3187,13 @@ button, input, select {
     }
 
     .category-tabs {
+        width: calc(100% + 2.5rem);
         margin-left: -1.25rem;
         margin-right: -1.25rem;
         padding-left: 1.25rem;
         padding-right: 1.25rem;
+        overflow-x: auto;
+        overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
     }
@@ -3212,8 +3238,43 @@ button, input, select {
 
     .top-bar-contact {
         width: 100%;
-        justify-content: space-between;
-        font-size: 0.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.35rem 0.85rem;
+        font-size: 0.78rem;
+    }
+
+    .nav-container {
+        height: 62px;
+        gap: 0.4rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .header-actions {
+        gap: 0.35rem;
+    }
+
+    .logo {
+        gap: 0.45rem;
+        min-width: 0;
+        flex-shrink: 1;
+    }
+
+    .logo-text {
+        min-width: 0;
+    }
+
+    .category-tabs {
+        width: calc(100% + 2rem);
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 0.45rem;
+        overflow-x: auto;
+        overflow-y: hidden;
     }
 
     /* Header & Logo */
@@ -3434,11 +3495,34 @@ button, input, select {
     }
 
     .direct-order-box {
-        padding: 1.4rem 1.1rem;
+        padding: 1.35rem 0.9rem;
+        width: 100%;
     }
 
     .direct-order-box h3 {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
+    }
+
+    .btn-whatsapp-xl {
+        font-size: 0.86rem;
+        padding: 0.85rem 0.75rem;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.35;
+        width: 100%;
+    }
+
+    .btn-outline-phone {
+        font-size: 0.86rem;
+        padding: 0.85rem 0.75rem;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.35;
+        width: 100%;
+    }
+
+    .ci-link {
+        word-break: break-all;
     }
 
     /* Footer épuré */
@@ -3489,22 +3573,35 @@ button, input, select {
 
 /* 6. PETITS SMARTPHONES (< 360px) */
 @media (max-width: 360px) {
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .category-tabs {
+        width: calc(100% + 1.5rem);
+        margin-left: -0.75rem;
+        margin-right: -0.75rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
     .logo-title {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .hero-title {
-        font-size: 1.75rem;
+        font-size: 1.65rem;
     }
 
     .btn {
-        padding: 0.65rem 1rem;
-        font-size: 0.85rem;
+        padding: 0.65rem 0.85rem;
+        font-size: 0.82rem;
     }
 
     .cat-pill {
-        padding: 0.5rem 0.85rem;
-        font-size: 0.8rem;
+        padding: 0.45rem 0.75rem;
+        font-size: 0.78rem;
     }
 
     .ci-details {
