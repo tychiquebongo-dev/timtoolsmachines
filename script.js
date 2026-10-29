@@ -283,27 +283,27 @@ const PRODUCTS = [
     },
     {
         "id": "p12",
-        "name": "Marteau piqueur HK-DH35B",
-        "name_en": "Demolition Jackhammer HK-DH35B",
+        "name": "Marteau piqueur brise-béton HK-DH35B",
+        "name_en": "Heavy Demolition Breaker Jackhammer HK-DH35B",
         "category": "perforateur",
         "brand": "UPSPIRIT",
         "image": "images/p12.jpg",
         "icon": "fa-solid fa-trowel-bricks",
         "role_badge": "Démolition lourde & Brise-béton",
         "role_badge_en": "Heavy Demolition & Breaker",
-        "role": "Brise-béton et marteau piqueur haute cadence HK-DH35B pour la démolition de dalles, le piquetage de murs en béton et le décapage de sols.",
-        "role_en": "High-impact demolition breaker HK-DH35B for slab demolition, concrete wall breaking and ground chiseling.",
+        "role": "Marteau piqueur et brise-béton haute cadence modèle HK-DH35B livré dans sa mallette métallique industrielle UPSPIRIT. Force d'impact phénoménale pour casser dalles béton, fondations, murs et tranchées.",
+        "role_en": "Heavy-duty high-impact demolition breaker model HK-DH35B supplied in rugged UPSPIRIT industrial steel chest. Ultimate impact energy for breaking concrete slabs, foundations, walls and trenches.",
         "specs": [
             "Modèle HK-DH35B",
-            "Force d'impact max",
-            "Système anti-choc",
-            "Livré avec burins"
+            "Coffre métallique UPSPIRIT",
+            "Burin pointu + burin plat",
+            "Poignée auxiliaire 360°"
         ],
         "specs_en": [
             "Model HK-DH35B",
-            "Max impact force",
-            "Shock-absorbing body",
-            "Chisels included"
+            "Industrial steel carry chest",
+            "Pointed & flat chisels included",
+            "360° auxiliary handle"
         ]
     },
     {
@@ -533,27 +533,27 @@ const PRODUCTS = [
     },
     {
         "id": "p22",
-        "name": "Scie à onglet radiale alu / bois HK-MS003",
-        "name_en": "Sliding Compound Miter Saw HK-MS003",
+        "name": "Scie découpeuse de carreaux & béton / Rainureuse",
+        "name_en": "Handheld Tile, Marble & Concrete Cutter Saw",
         "category": "meuleuse",
         "brand": "UPSPIRIT",
         "image": "images/p22.jpg",
         "icon": "fa-solid fa-ruler-combined",
-        "role_badge": "Coupes d'onglets alu & Bois",
-        "role_badge_en": "Aluminum & Wood Miter Cutting",
-        "role": "Scie circulaire à onglet radiale de haute précision HK-MS003 pour menuiserie bois et profilés aluminium. Angles de coupe précis de 0° à 45°.",
-        "role_en": "High-precision sliding miter saw for aluminum profiles and woodwork. Bevel and miter angle adjustment for clean carpentry cuts.",
+        "role_badge": "Découpe carrelage, marbre & saignées",
+        "role_badge_en": "Tile, Marble & Masonry Cutting",
+        "role": "Scie circulaire découpeuse de matériaux compacte haute puissance de marque officielle UPSPIRIT. Disque diamant segmenté, semelle réglable en profondeur et en biseau avec buse de coupe à eau pour carrelages, dalles et briques.",
+        "role_en": "High-powered compact masonry and tile cutter by official brand UPSPIRIT. Features segmented diamond blade, depth & bevel adjustable shoe plate and wet cutting nozzle for tiles, marble and masonry.",
         "specs": [
-            "Réf HK-MS003",
-            "Chariot radial",
-            "Coupe bois & alu",
-            "Guide laser de coupe"
+            "Disque diamant segmenté inclus",
+            "Semelle réglable profondeur & biseau",
+            "Buse d'arrosage coupe à eau",
+            "Poignée ergonomique sécurisée"
         ],
         "specs_en": [
-            "Model HK-MS003",
-            "Wood & aluminum blade",
-            "Dual sliding rails",
-            "High precision"
+            "Segmented diamond disc included",
+            "Depth & bevel adjustable shoe",
+            "Wet cutting water feed",
+            "Ergonomic safety D-handle"
         ]
     },
     {
