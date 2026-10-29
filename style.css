@@ -1544,6 +1544,97 @@ button, input, select {
     transform: translateY(-2px);
 }
 
+/* Single Action Footer (Sans prix - Bouton Commande Direct) */
+.product-footer.single-action {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+.btn-card-order-full {
+    background: var(--whatsapp-color);
+    color: #fff;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 14px var(--whatsapp-glow);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-card-order-full:hover {
+    background: #20ba59;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.google-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(11, 13, 16, 0.88);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 193, 7, 0.35);
+    color: #fff;
+    font-size: 0.72rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    padding: 0.22rem 0.55rem;
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all var(--transition-fast);
+    z-index: 2;
+    text-decoration: none;
+}
+
+.google-badge:hover {
+    background: var(--yellow-primary);
+    color: var(--text-dark);
+    border-color: var(--yellow-primary);
+}
+
+.google-badge:hover i {
+    color: var(--text-dark) !important;
+}
+
+.btn-google-info {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 0.85rem 1.2rem;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+}
+
+.btn-google-info:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: var(--yellow-primary);
+    color: var(--yellow-primary);
+}
+
 /* Empty State */
 .empty-state {
     text-align: center;
@@ -3229,6 +3320,16 @@ button, input, select {
         justify-content: space-between;
         padding-top: 0.75rem;
         border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .product-footer.single-action {
+        justify-content: stretch;
+    }
+
+    .btn-card-order-full {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        font-size: 0.95rem;
     }
 
     .price-value {

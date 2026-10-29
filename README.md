@@ -17,8 +17,9 @@ Site vitrine e-commerce et catalogue interactif pour **Tim Tools Machines**, dis
 ## 📱 Version Mobile Optimisée
 
 - **100% Épurée** : Suppression de tous les éléments fictifs (faux avis, fausses stats, faux compteurs, accordéon générique) pour aller droit à l'essentiel.
-- **Accès Direct au Parc Réel d'Équipements** : Catalogue dynamique immédiatement accessible avec filtres par rôle technique et recherche instantanée.
-- **Commande WhatsApp en 1 Clic** : Bouton vert avec message pré-rempli pour chaque article.
+- **Accès Direct aux 36 Machines Officielles UPSPIRIT** : Catalogue dynamique immédiatement accessible avec photographies studio haute définition, badges de rôle technique et recherche instantanée.
+- **Liaison Google Officielle** : Chaque machine dispose d'un badge et bouton direct vers Google Images pour consulter les fiches et détails officiels.
+- **Commande WhatsApp en 1 Clic Direct** : Bouton vert unique « Commander sur WhatsApp » pré-remplissant automatiquement le nom et la référence du produit (prix masqués pour devis direct).
 - **Appel Téléphonique Direct** : `+225 07 89 55 74 42`.
 - **Localisation Magasin** : Abidjan, Angré Les Oscars (en diagonale du Centre Médical Hoffmann).
 - **Performance Maximale** : Affichage fluide, ultra-léger et compatible avec tous les smartphones (iOS & Android).
@@ -29,28 +30,28 @@ Site vitrine e-commerce et catalogue interactif pour **Tim Tools Machines**, dis
 
 - **Commutateur instantané** : Bouton `FR | EN` accessible en haut à droite sur tous les écrans (desktop et smartphone).
 - **Persistance automatique** : La langue choisie est automatiquement mémorisée dans le navigateur (`localStorage`).
-- **Traduction complète** : Menus, recherche, filtres par rôle, fiches techniques et badges opérationnels des machines UPSPIRIT, panier et messages WhatsApp pré-remplis générés dans la langue choisie.
+- **Traduction complète** : Menus, recherche, filtres par catégorie, fiches techniques et badges opérationnels des 36 machines UPSPIRIT, messages WhatsApp pré-remplis générés dans la langue choisie.
 
 ---
 
 ## 🌟 Caractéristiques du Projet
 
 - **Identité Visuelle Forte** : Thème industriel Noir & Jaune sécurité haute visibilité (style DeWalt / CAT / matériel de chantier pro).
-- **Parc Matériel Réel en Stock** : Intégration de la photographie réelle du showroom d'Abidjan avec chaque machine détourée et classée par son rôle exact sur chantier.
-- **Classification par Rôles Techniques** :
-  - 🔨 **Perforation & Démolition** : Brise-bétons SDS, piqueurs DH35B, perforateurs rotatifs 20/24/26 mm.
-  - 💿 **Meulage & Découpe** : Meuleuses 115/125/180/230 mm, rainureuse double disque à béton.
-  - 💨 **Soufflage & Nettoyage** : Souffleurs d'atelier dépoussiérants & évacuation des sciures.
-  - 🔥 **Soudure Industrielle** : Postes à souder MMA Inverter 250A et 300A.
-  - ⚖️ **Balances & Pesage** : Balances électroniques à colonne 300 kg et modèles de comptoir.
-  - 🔌 **Câbles & Enrouleurs** : Enrouleurs professionnels 25m et 50m avec disjoncteur thermique.
-  - 🧰 **Boîtes & Outillage** : Mallette complète 186 pièces en valise trolley aluminium.
-  - ⚡ **Perçage & Vissage** : Perceuses filaires 13 mm, visseuses compactes 20V et packs batteries Lithium.
-- **Prix Directs en Francs CFA (XOF)** : Tarifs transparents d'importateur direct.
-- **Système de Commande & Panier WhatsApp** :
-  - Bouton **"Commander sur WhatsApp"** individuel pour chaque produit avec message pré-rempli.
-  - Panier interactif permettant de cumuler plusieurs outils et d'envoyer un devis chiffré sur WhatsApp (+225 07 15 03 27 98).
-- **100% Responsive** : Optimisé pour mobiles, tablettes et ordinateurs de bureau.
+- **Catalogue Officiel des 36 Machines & Outils UPSPIRIT** :
+  - Photos studio professionnelles haute définition sur fond propre (`images/p1.jpg` à `images/p36.jpg`).
+  - Badge de liaison Google sur chaque machine pour vérification instantanée.
+  - Rôle opérationnel précis sur chantier et caractéristiques techniques complètes.
+  - Bouton unique de commande WhatsApp (sans affichage de prix) pour conversion maximale.
+- **Organisation par Rôles Techniques** :
+  - 🔨 **Perforateurs & Piqueurs** : Marteaux perforateurs rotatifs SDS 20, 24, 26 mm, Piqueur lourd HK-DH35B.
+  - 💿 **Meuleuses & Découpe** : Meuleuses 115, 125, 180, 230 mm, scies à onglets, tronçonneuse métal 355 mm.
+  - 💨 **Souffleurs & Chaleur** : Souffleurs d'atelier, modèles renforcés grand débit et décapeur thermique HK-HG01.
+  - 🔥 **Soudure & Atelier** : Postes MMA Inverter 250A / 300A, malaxeur mortier et tourets à meuler 150/200 mm.
+  - ⚖️ **Balances & Mesure** : Balance à colonne 300 kg HK-DS150K et balance de comptoir HK-836.
+  - 🔌 **Câbles & Enrouleurs** : Enrouleurs 25m et 50m (standard et carénés) avec sécurité thermique.
+  - 🧰 **Outillage & Consommables** : Mallette 186 pièces trolley alu, coffret 46 pièces, pulvérisateurs et charbons.
+  - 🪜 **Échelles & Accès** : Échelles et escabeaux professionnels tout type.
+- **100% Responsive** : Optimisé pour smartphones, tablettes et ordinateurs de bureau.
 
 ---
 
