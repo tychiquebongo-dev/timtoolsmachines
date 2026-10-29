@@ -944,10 +944,14 @@ function closeModal() {
         }, 2800);
     }
 
-    // 1. DYNAMIC INDUSTRIAL SPARKS SYSTEM (Hero Canvas)
+    // 1. DYNAMIC INDUSTRIAL SPARKS SYSTEM (Hero Canvas - Desktop Only for best mobile performance)
     function initSparks() {
         const canvas = document.getElementById("sparksCanvas");
         if (!canvas) return;
+        if (window.innerWidth <= 768) {
+            canvas.style.display = "none";
+            return;
+        }
         const ctx = canvas.getContext("2d");
 
         let width = (canvas.width = canvas.parentElement.offsetWidth);
