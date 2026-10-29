@@ -912,7 +912,7 @@ const PRODUCTS = [
 // DICTIONNAIRE MULTILINGUE (FRANÇAIS & ANGLAIS)
 const TRANSLATIONS = {
     "fr": {
-        "page_title": "Tim Tools Machines | Vente d'Outils et Machines Professionnels Upspirit",
+        "page_title": "Tim Tools Machines | Outillage & Machines UPSPIRIT Abidjan",
         "top_official": "Distributeur Officiel",
         "top_location": "Abidjan, Angré Les Oscars (en diagonale du Centre Médical Hoffmann)",
         "nav_home": "Accueil",
@@ -1064,7 +1064,7 @@ const TRANSLATIONS = {
         "floating_wa_tip": "Commander sur WhatsApp"
     },
     "en": {
-        "page_title": "Tim Tools Machines | Professional Upspirit Tools & Machinery Sales",
+        "page_title": "Tim Tools Machines | Professional UPSPIRIT Tools & Machinery Abidjan",
         "top_official": "Official Distributor",
         "top_location": "Abidjan, Angré Les Oscars (diagonally across from Hoffmann Medical Center)",
         "nav_home": "Home",
@@ -1485,14 +1485,17 @@ function renderProducts() {
         const waMessage = encodeURIComponent(waMsgText);
 
         return `
-            <div class="product-card" data-id="${product.id}">
+            <article class="product-card" data-id="${product.id}" itemscope itemtype="https://schema.org/Product">
+                <meta itemprop="name" content="${title}">
+                <meta itemprop="brand" content="UPSPIRIT">
+                <meta itemprop="description" content="${role}">
                 <div class="product-media" onclick="openProductModal('${product.id}')" style="cursor: pointer;">
                     <div class="brand-chip"><i class="fa-solid fa-shield-halved text-yellow"></i> ${product.brand}</div>
                     <a href="${googleSearchUrl}" target="_blank" rel="noopener noreferrer" class="google-badge" title="${t('google_view')}" onclick="event.stopPropagation();">
                         <i class="fa-brands fa-google text-yellow"></i> Google
                     </a>
                     <div class="product-img-wrapper">
-                        <img src="${product.image}" alt="${title}" class="product-real-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <img src="${product.image}" alt="${title} - UPSPIRIT Outillage Professionnel" itemprop="image" class="product-real-img" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="product-icon-display" style="display: none;">
                             <i class="${product.icon}"></i>
                         </div>
@@ -1523,7 +1526,7 @@ function renderProducts() {
                         </a>
                     </div>
                 </div>
-            </div>
+            </article>
         `;
     }).join("");
 

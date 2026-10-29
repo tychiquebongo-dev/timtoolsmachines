@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffd43b"/>
+            <stop offset="100%" stop-color="#ffc107"/>
+        </linearGradient>
+    </defs>
+    <!-- Background rounded squircle -->
+    <rect width="64" height="64" rx="14" fill="#0b0d10"/>
+    <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="url(#grad)" stroke-width="2.5"/>
+    <!-- Yellow wrench & screwdriver tool mark -->
+    <path d="M42.5 14a8.5 8.5 0 0 0-7.8 5.1l-14 14-2.5-2.5a2 2 0 0 0-2.8 0l-2.1 2.1a2 2 0 0 0 0 2.8l8.5 8.5a2 2 0 0 0 2.8 0l2.1-2.1a2 2 0 0 0 0-2.8l-2.5-2.5 14-14A8.5 8.5 0 1 0 42.5 14zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" fill="url(#grad)"/>
+    <path d="M20.5 45.5l-6 6a2 2 0 0 0 2.8 2.8l6-6-2.8-2.8z" fill="#f8fafc"/>
+</svg>

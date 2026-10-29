@@ -1,0 +1,8 @@
+# Robots.txt for Tim Tools Machines
+# https://timtoolsmachines.vercel.app/
+
+User-agent: *
+Allow: /
+
+# Fast Indexing Sitemap
+Sitemap: https://timtoolsmachines.vercel.app/sitemap.xml
