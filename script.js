@@ -566,19 +566,19 @@ const PRODUCTS = [
         "icon": "fa-solid fa-shapes",
         "role_badge": "Tronçonnage stationnaire bois",
         "role_badge_en": "Stationary Wood Cutting",
-        "role": "Station d'onglet et tronçonneuse d'atelier HK-MS004. Bâti robuste en aluminium moulé, table de découpe graduée pour coupes d'onglets nettes.",
-        "role_en": "Heavy workshop miter saw HK-MS004 with heavy cast base. Designed for fast, repetitive cross-cutting of metal and timber.",
+        "role": "Station d'onglet et tronçonneuse d'atelier HK-MS004. Bâti robuste en aluminium moulé, sac collecteur de poussière et table graduée pour coupes d'onglets nettes.",
+        "role_en": "Heavy workshop miter saw HK-MS004 with heavy cast base and dust bag. Designed for fast, repetitive cross-cutting of metal and timber.",
         "specs": [
-            "Réf HK-MS004",
-            "Plateau tournant cranté",
-            "Butée de profondeur",
-            "Lame carbure incluse"
+            "Modèle HK-MS004",
+            "Sac récupérateur de poussière",
+            "Lame carbure & presseur",
+            "Plateau tournant cranté"
         ],
         "specs_en": [
             "Model HK-MS004",
-            "Solid cast base",
-            "Accurate angle fence",
-            "Heavy workshop grade"
+            "Dust collection bag",
+            "Carbide blade & clamp",
+            "Graduated miter table"
         ]
     },
     {
@@ -591,19 +591,19 @@ const PRODUCTS = [
         "icon": "fa-solid fa-circle-dot",
         "role_badge": "Découpe pendulaire acier 355mm",
         "role_badge_en": "355mm Steel Chop Sawing",
-        "role": "Tronçonneuse pendulaire 355 mm de marque officielle UPSPIRIT pour la découpe à froid nette et rapide de fers ronds, cornières, poutrelles et tubes acier.",
-        "role_en": "Stationary abrasive metal cut-off saw 355mm (14\") by official brand UPSPIRIT for rapid cutting of steel pipes, angles, tubes and solid bars.",
+        "role": "Tronçonneuse pendulaire 355 mm modèle HK-CM355 pour la découpe à froid nette et rapide de fers ronds, cornières, poutrelles et tubes acier.",
+        "role_en": "Stationary abrasive metal cut-off saw 355mm (14\") model HK-CM355 for rapid cold cutting of steel pipes, angles, tubes and solid bars.",
         "specs": [
-            "Disque 355 mm (14\")",
-            "Marque UPSPIRIT",
+            "Disque abrasif 355 mm (14\")",
+            "Modèle HK-CM355",
             "Étau de serrage rapide",
-            "Capot enveloppant"
+            "Carter enveloppant de sécurité"
         ],
         "specs_en": [
-            "Abrasive disc 355mm",
-            "Brand UPSPIRIT",
-            "Quick-clamp vise",
-            "Full spark deflector"
+            "Abrasive disc 355mm (14\")",
+            "Model HK-CM355",
+            "Quick-release clamp vise",
+            "Full spark safety guard"
         ]
     },
     {
@@ -616,19 +616,19 @@ const PRODUCTS = [
         "icon": "fa-solid fa-temperature-arrow-up",
         "role_badge": "Décapage & Chauffage thermique",
         "role_badge_en": "Heat Stripping & Forming",
-        "role": "Générateur d'air chaud professionnel HK-HG01 pour décaper peintures et vernis, déformer les tuyaux PVC, souder bâches et rétracter gaines.",
-        "role_en": "Professional variable-temperature heat gun for paint stripping, pipe bending, heat-shrink tubing and drying.",
+        "role": "Générateur d'air chaud professionnel HK-HG01 avec kit de 4 buses inox. Idéal pour décaper peintures et vernis, cintrer les tuyaux PVC et rétracter gaines.",
+        "role_en": "Professional heat gun model HK-HG01 with 4 stainless nozzles included. Ideal for paint stripping, pipe bending and heat-shrink tubing.",
         "specs": [
             "Réf HK-HG01",
-            "Thermostat réglable",
-            "Multi-embouts fournis",
+            "4 buses inox fournies",
+            "Thermostat 2 allures",
             "Position statique verticale"
         ],
         "specs_en": [
             "Model HK-HGO1",
-            "Multi-stage heat",
-            "Nozzle kit included",
-            "Ceramic core"
+            "4 stainless nozzles included",
+            "Dual-temperature switch",
+            "Hands-free vertical stand"
         ]
     },
     {
@@ -694,16 +694,16 @@ const PRODUCTS = [
         "role": "Perceuse électrique maniable HK-ED1305 avec mandrin à clé 13 mm. Inverseur de sens de rotation et variateur pour forer bois, métal et plastique.",
         "role_en": "Compact 13mm keyed chuck drill with reverse switch and speed control. Ideal for steel, wood and plastic drilling.",
         "specs": [
-            "Mandrin 13 mm",
+            "Mandrin à clé 13 mm",
             "Réf HK-ED1305",
-            "Vitesse variable",
-            "Poignée ergonomique"
+            "Poignée auxiliaire + butée",
+            "Clé de serrage fournie"
         ],
         "specs_en": [
             "13mm keyed chuck",
             "Model HK-ED1305",
-            "Forward/Reverse",
-            "Depth gauge included"
+            "Aux handle + depth rod",
+            "Chuck key included"
         ]
     },
     {
