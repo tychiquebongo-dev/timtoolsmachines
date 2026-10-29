@@ -16,7 +16,7 @@
     <!-- Open Graph pour Partage WhatsApp & Réseaux -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Tim Tools Machines | Vente d'Outils et Machines Upspirit">
-    <meta property="og:description" content="Catalogue officiel de 36 machines et outils professionnels Upspirit. Prix en XOF et commande directe sur WhatsApp (+225 07 15 03 27 98).">
+    <meta property="og:description" content="Catalogue officiel des équipements et machines professionnels Upspirit. Prix en XOF et commande directe sur WhatsApp (+225 07 15 03 27 98).">
     <meta property="og:image" content="images/hero-bg.jpg">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,7 +68,7 @@
                 <ul class="nav-list">
                     <li><a href="#accueil" class="nav-link active"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">Accueil</span></a></li>
                     <li><a href="#apropos" class="nav-link"><i class="fa-solid fa-circle-info"></i> <span data-i18n="nav_about">À Propos</span></a></li>
-                    <li><a href="#machines" class="nav-link"><i class="fa-solid fa-gears"></i> <span data-i18n="nav_machines">Machines & Outils (36)</span></a></li>
+                    <li><a href="#machines" class="nav-link"><i class="fa-solid fa-gears"></i> <span data-i18n="nav_machines">Machines & Outils (23)</span></a></li>
                     <li class="hide-on-mobile"><a href="#temoignages" class="nav-link"><i class="fa-solid fa-comments"></i> <span data-i18n="nav_reviews">Avis</span></a></li>
                     <li class="hide-on-mobile"><a href="#faq" class="nav-link"><i class="fa-solid fa-circle-question"></i> <span data-i18n="nav_faq">FAQ</span></a></li>
                     <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav_contact">Contact</span></a></li>
@@ -140,14 +140,14 @@
                     <i class="fa-brands fa-whatsapp"></i> <span data-i18n="hero_cta_whatsapp">Commander sur WhatsApp</span>
                 </a>
                 <a href="#machines" class="btn btn-outline-yellow">
-                    <i class="fa-solid fa-layer-group"></i> <span data-i18n="hero_cta_catalog">Voir nos 36 Machines</span>
+                    <i class="fa-solid fa-layer-group"></i> <span data-i18n="hero_cta_catalog">Voir nos 23 Équipements</span>
                 </a>
             </div>
 
             <!-- Key Quick Stats with Live Counters (Hidden on mobile to stay lean & direct) -->
             <div class="hero-stats hide-on-mobile" id="heroStats">
                 <div class="stat-item">
-                    <span class="stat-number count-up" data-target="36" data-suffix="+">0</span>
+                    <span class="stat-number count-up" data-target="23" data-suffix="+">0</span>
                     <span class="stat-label" data-i18n="hero_stat_machines">Machines & Équipements</span>
                 </div>
                 <div class="stat-item">
@@ -240,6 +240,30 @@
             </div>
 
             <!-- SEARCH AND FILTER CONTROLS -->
+            
+            <!-- SHOWROOM PARC BANNER (Image réelle du stock) -->
+            <div class="showroom-banner">
+                <div class="showroom-banner-visual">
+                    <img src="images/showroom-parc.jpg" alt="Parc matériel réel Tim Tools Machines Abidjan" class="showroom-parc-img" />
+                    <div class="showroom-badge">
+                        <span class="pulse-dot"></span>
+                        <span data-i18n="showroom_badge">100% En Stock Réel sur Place</span>
+                    </div>
+                </div>
+                <div class="showroom-banner-content">
+                    <div class="showroom-tag"><i class="fa-solid fa-building-circle-check text-yellow"></i> <span data-i18n="showroom_tag">PARC MATÉRIEL EN STOCK RÉEL</span></div>
+                    <h3 class="showroom-title" data-i18n="showroom_title">Équipements Réels Photographiés sur Place à Angré</h3>
+                    <p class="showroom-desc" data-i18n="showroom_desc">
+                        Chaque machine ci-dessous provient directement de notre stock réel photographié sur place. Classées par rôle technique pour répondre exactement aux exigences de vos chantiers.
+                    </p>
+                    <div class="showroom-highlights">
+                        <div class="s-highlight-item"><i class="fa-solid fa-circle-check text-yellow"></i> <span>Disponible immédiatement</span></div>
+                        <div class="s-highlight-item"><i class="fa-solid fa-circle-check text-yellow"></i> <span>Testé avant remise</span></div>
+                        <div class="s-highlight-item"><i class="fa-solid fa-circle-check text-yellow"></i> <span>Angré Les Oscars</span></div>
+                    </div>
+                </div>
+            </div>
+
             <div class="catalog-controls">
                 <!-- Search bar -->
                 <div class="search-box">
@@ -264,15 +288,15 @@
 
             <!-- Category Filter Pills -->
             <div class="category-tabs" id="categoryTabs">
-                <button class="cat-pill active" data-category="all"><i class="fa-solid fa-border-all"></i> <span data-i18n="cat_all">Tous les articles</span> <span class="count-badge" id="countAll">36</span></button>
-                <button class="cat-pill" data-category="perforateur"><i class="fa-solid fa-hammer"></i> <span data-i18n="cat_perforateur">Perforateurs & Piqueurs</span></button>
-                <button class="cat-pill" data-category="meuleuse"><i class="fa-solid fa-compact-disc"></i> <span data-i18n="cat_meuleuse">Meuleuses & Découpe</span></button>
-                <button class="cat-pill" data-category="souffleur"><i class="fa-solid fa-wind"></i> <span data-i18n="cat_souffleur">Souffleurs & Chaleur</span></button>
-                <button class="cat-pill" data-category="soudure"><i class="fa-solid fa-fire"></i> <span data-i18n="cat_soudure">Soudure & Établi</span></button>
-                <button class="cat-pill" data-category="pesage"><i class="fa-solid fa-scale-balanced"></i> <span data-i18n="cat_pesage">Balances & Mesure</span></button>
+                <button class="cat-pill active" data-category="all"><i class="fa-solid fa-border-all"></i> <span data-i18n="cat_all">Tous les équipements</span> <span class="count-badge" id="countAll">23</span></button>
+                <button class="cat-pill" data-category="perforation"><i class="fa-solid fa-hammer"></i> <span data-i18n="cat_perforation">Perforation & Démolition</span></button>
+                <button class="cat-pill" data-category="meulage"><i class="fa-solid fa-compact-disc"></i> <span data-i18n="cat_meulage">Meulage & Découpe</span></button>
+                <button class="cat-pill" data-category="soufflage"><i class="fa-solid fa-wind"></i> <span data-i18n="cat_soufflage">Soufflage & Nettoyage</span></button>
+                <button class="cat-pill" data-category="soudure"><i class="fa-solid fa-fire"></i> <span data-i18n="cat_soudure">Soudure Industrielle</span></button>
+                <button class="cat-pill" data-category="pesage"><i class="fa-solid fa-scale-balanced"></i> <span data-i18n="cat_pesage">Balances & Pesage</span></button>
                 <button class="cat-pill" data-category="cables"><i class="fa-solid fa-plug"></i> <span data-i18n="cat_cables">Câbles & Enrouleurs</span></button>
-                <button class="cat-pill" data-category="outillage"><i class="fa-solid fa-wrench"></i> <span data-i18n="cat_outillage">Outillage & Consommables</span></button>
-                <button class="cat-pill" data-category="echelles"><i class="fa-solid fa-stairs"></i> <span data-i18n="cat_echelles">Échelles & Accès</span></button>
+                <button class="cat-pill" data-category="outillage"><i class="fa-solid fa-toolbox"></i> <span data-i18n="cat_outillage">Boîtes & Outillage</span></button>
+                <button class="cat-pill" data-category="percage"><i class="fa-solid fa-screwdriver"></i> <span data-i18n="cat_percage">Perçage & Vissage</span></button>
             </div>
 
             <!-- Quick Budget Filter Bar -->
@@ -288,7 +312,7 @@
 
             <!-- Products Counter & Active Filter Display -->
             <div class="results-bar">
-                <span id="resultsCount">Affichage de <strong>36</strong> machines et outils</span>
+                <span id="resultsCount">Affichage de <strong>23</strong> machines et outils</span>
                 <span class="delivery-hint"><i class="fa-solid fa-check"></i> <span data-i18n="delivery_hint">Prêts pour expédition immédiate</span></span>
             </div>
 
@@ -578,7 +602,7 @@
                 <ul class="footer-links">
                     <li><a href="#accueil"><i class="fa-solid fa-chevron-right"></i> Accueil</a></li>
                     <li><a href="#apropos"><i class="fa-solid fa-chevron-right"></i> À Propos</a></li>
-                    <li><a href="#machines"><i class="fa-solid fa-chevron-right"></i> Nos Machines (36)</a></li>
+                    <li><a href="#machines"><i class="fa-solid fa-chevron-right"></i> Nos Machines (23)</a></li>
                     <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact Direct</a></li>
                 </ul>
             </div>
@@ -586,16 +610,16 @@
             <div class="footer-col hide-on-mobile">
                 <h4 class="footer-heading">Top Catégories</h4>
                 <ul class="footer-links">
-                    <li><a href="#machines" onclick="filterByCategory('perforateur')"><i
-                                class="fa-solid fa-chevron-right"></i> Marteaux Perforateurs</a></li>
-                    <li><a href="#machines" onclick="filterByCategory('meuleuse')"><i
-                                class="fa-solid fa-chevron-right"></i> Meuleuses & Découpeuses</a></li>
+                    <li><a href="#machines" onclick="filterByCategory('perforation')"><i
+                                class="fa-solid fa-chevron-right"></i> Perforation & Démolition</a></li>
+                    <li><a href="#machines" onclick="filterByCategory('meulage')"><i
+                                class="fa-solid fa-chevron-right"></i> Meulage & Découpe</a></li>
                     <li><a href="#machines" onclick="filterByCategory('soudure')"><i
-                                class="fa-solid fa-chevron-right"></i> Postes à Souder MMA</a></li>
-                    <li><a href="#machines" onclick="filterByCategory('souffleur')"><i
-                                class="fa-solid fa-chevron-right"></i> Souffleurs Électriques</a></li>
+                                class="fa-solid fa-chevron-right"></i> Soudure Industrielle</a></li>
+                    <li><a href="#machines" onclick="filterByCategory('soufflage')"><i
+                                class="fa-solid fa-chevron-right"></i> Soufflage & Nettoyage</a></li>
                     <li><a href="#machines" onclick="filterByCategory('pesage')"><i
-                                class="fa-solid fa-chevron-right"></i> Balances Électroniques</a></li>
+                                class="fa-solid fa-chevron-right"></i> Balances & Pesage</a></li>
                 </ul>
             </div>
 

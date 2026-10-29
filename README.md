@@ -17,9 +17,10 @@ Site vitrine e-commerce et catalogue interactif pour **Tim Tools Machines**, dis
 ## 📱 Version Mobile Optimisée
 
 - **100% Épurée** : Suppression de tous les éléments fictifs (faux avis, fausses stats, faux compteurs, accordéon générique) pour aller droit à l'essentiel.
-- **Accès Direct aux 36 Machines** : Catalogue dynamique immédiatement accessible avec filtres et recherche instantanée.
+- **Accès Direct au Parc Réel d'Équipements** : Catalogue dynamique immédiatement accessible avec filtres par rôle technique et recherche instantanée.
 - **Commande WhatsApp en 1 Clic** : Bouton vert avec message pré-rempli pour chaque article.
 - **Appel Téléphonique Direct** : `+225 07 89 55 74 42`.
+- **Localisation Magasin** : Abidjan, Angré Les Oscars (en diagonale du Centre Médical Hoffmann).
 - **Performance Maximale** : Affichage fluide, ultra-léger et compatible avec tous les smartphones (iOS & Android).
 
 ---
@@ -28,29 +29,27 @@ Site vitrine e-commerce et catalogue interactif pour **Tim Tools Machines**, dis
 
 - **Commutateur instantané** : Bouton `FR | EN` accessible en haut à droite sur tous les écrans (desktop et smartphone).
 - **Persistance automatique** : La langue choisie est automatiquement mémorisée dans le navigateur (`localStorage`).
-- **Traduction complète** : Menus, recherche, filtres par catégorie, fiches techniques et rôles des 36 machines UPSPIRIT, panier et messages WhatsApp pré-remplis générés dans la langue choisie.
+- **Traduction complète** : Menus, recherche, filtres par rôle, fiches techniques et badges opérationnels des machines UPSPIRIT, panier et messages WhatsApp pré-remplis générés dans la langue choisie.
 
 ---
 
 ## 🌟 Caractéristiques du Projet
 
 - **Identité Visuelle Forte** : Thème industriel Noir & Jaune sécurité haute visibilité (style DeWalt / CAT / matériel de chantier pro).
-- **Hero Section Immersive** : Ouvrier en pleine action avec perceuse électrique sur une échelle, typographie percutante, bouton direct WhatsApp.
-- **Catalogue Complet des 36 Machines & Outils** :
-  - Prix affichés en Francs CFA (**XOF**).
-  - Rôle détaillé, fiche technique et caractéristiques pour chaque article.
-  - Cartes produits animées avec effet de survol 3D et icônes industrielles.
-- **Filtres & Recherche en Temps Réel** :
-  - Barre de recherche instantanée (par nom, rôle, référence).
-  - Onglets de filtrage par catégories (*Perforateurs*, *Meuleuses*, *Souffleurs*, *Soudure*, *Pesage*, *Câbles*, *Outillage*, *Échelles*).
-  - Tri par prix (croissant / décroissant) et par nom alphabétique.
+- **Parc Matériel Réel en Stock** : Intégration de la photographie réelle du showroom d'Abidjan avec chaque machine détourée et classée par son rôle exact sur chantier.
+- **Classification par Rôles Techniques** :
+  - 🔨 **Perforation & Démolition** : Brise-bétons SDS, piqueurs DH35B, perforateurs rotatifs 20/24/26 mm.
+  - 💿 **Meulage & Découpe** : Meuleuses 115/125/180/230 mm, rainureuse double disque à béton.
+  - 💨 **Soufflage & Nettoyage** : Souffleurs d'atelier dépoussiérants & évacuation des sciures.
+  - 🔥 **Soudure Industrielle** : Postes à souder MMA Inverter 250A et 300A.
+  - ⚖️ **Balances & Pesage** : Balances électroniques à colonne 300 kg et modèles de comptoir.
+  - 🔌 **Câbles & Enrouleurs** : Enrouleurs professionnels 25m et 50m avec disjoncteur thermique.
+  - 🧰 **Boîtes & Outillage** : Mallette complète 186 pièces en valise trolley aluminium.
+  - ⚡ **Perçage & Vissage** : Perceuses filaires 13 mm, visseuses compactes 20V et packs batteries Lithium.
+- **Prix Directs en Francs CFA (XOF)** : Tarifs transparents d'importateur direct.
 - **Système de Commande & Panier WhatsApp** :
-  - Bouton **"Commander sur WhatsApp"** individuel pour chaque produit, pré-remplissant automatiquement le message de commande avec la référence et le prix.
-  - Panier interactif permettant de sélectionner plusieurs produits, d'ajuster les quantités et d'envoyer un **récapitulatif complet chiffré directement sur WhatsApp** (+225 07 15 03 27 98).
-- **Section À Propos & Garanties** : Présentation de l'entreprise et de la marque Upspirit.
-- **Section Contact & Footer Complet** :
-  - Téléphone direct : `+225 07 89 55 74 42`
-  - WhatsApp : `+225 07 15 03 27 98`
+  - Bouton **"Commander sur WhatsApp"** individuel pour chaque produit avec message pré-rempli.
+  - Panier interactif permettant de cumuler plusieurs outils et d'envoyer un devis chiffré sur WhatsApp (+225 07 15 03 27 98).
 - **100% Responsive** : Optimisé pour mobiles, tablettes et ordinateurs de bureau.
 
 ---
