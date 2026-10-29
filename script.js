@@ -716,19 +716,19 @@ const PRODUCTS = [
         "icon": "fa-solid fa-satellite-dish",
         "role_badge": "Alimentation mobile sécurisée 25m",
         "role_badge_en": "25m Safe Mobile Power Reel",
-        "role": "Tambour enrouleur 25 mètres de marque officielle UPSPIRIT HK-CR25. Châssis métallique stable, 4 prises protégées avec clapets et coupe-circuit thermique.",
-        "role_en": "UPSPIRIT 25-meter heavy-duty cable reel on steel frame with thermal overload cut-out and 4 socket outlets.",
+        "role": "Tambour enrouleur 25 mètres HK-CR25 avec câble jaune haute visibilité. Châssis métallique tubulaire stable, 4 prises protégées par clapets étanches et disjoncteur thermique avec bouton reset.",
+        "role_en": "Heavy-duty 25-meter cable reel HK-CR25 with high-visibility yellow cable, steel tubular stand, 4 flap-protected sockets and thermal overload reset.",
         "specs": [
             "Longueur 25 mètres",
-            "Marque UPSPIRIT",
-            "4 prises 230V",
-            "Disjoncteur thermique"
+            "Câble jaune haute visibilité",
+            "4 prises à clapets étanches",
+            "Disjoncteur thermique reset"
         ],
         "specs_en": [
             "25 meters length",
-            "Brand UPSPIRIT",
-            "4 grounded sockets",
-            "Steel tubular frame"
+            "High-vis yellow cable",
+            "4 flap-covered sockets",
+            "Thermal overload reset"
         ]
     },
     {
@@ -741,19 +741,19 @@ const PRODUCTS = [
         "icon": "fa-solid fa-circle-nodes",
         "role_badge": "Distribution électrique 50m",
         "role_badge_en": "50m Long-Range Extension Reel",
-        "role": "Grand enrouleur de chantier 50 mètres HK-CR50. Idéal pour alimenter vos machines à longue distance en extérieur sans perte de tension.",
-        "role_en": "Long-range 50-meter extension drum on steel stand with crank handle for building sites and workshops.",
+        "role": "Grand enrouleur de chantier 50 mètres HK-CR50 sur pied tubulaire acier. Flasque tambour jaune haute résistance, 4 prises à obturateur avec disjoncteur thermique et poignée de rembobinage rapide.",
+        "role_en": "Heavy-duty 50-meter extension drum HK-CR50 on steel tubular stand with yellow steel drum, 4 protected sockets, thermal cutoff button and rapid winder crank.",
         "specs": [
             "Portée 50 mètres",
-            "Réf HK-CR50",
-            "Tambour renforcé",
-            "Poignée guide-câble"
+            "Modèle HK-CR50",
+            "Tambour jaune renforcé",
+            "4 prises + disjoncteur thermique"
         ],
         "specs_en": [
             "50 meters length",
             "Model HK-CR50",
-            "Heavy-gauge cable",
-            "Ergonomic winder"
+            "Reinforced yellow drum",
+            "4 sockets + thermal safety"
         ]
     },
     {
@@ -766,19 +766,19 @@ const PRODUCTS = [
         "icon": "fa-solid fa-shield",
         "role_badge": "Enrouleur caréné antichoc 50m",
         "role_badge_en": "50m Armored Enclosed Reel",
-        "role": "Enrouleur professionnel 50 mètres HK-CR50 doté d'un carénage protecteur intégral anti-poussière, boue et chocs mécaniques sur chantier.",
-        "role_en": "Fully enclosed 50m cable drum protecting wire from dust, water splashes and mechanical impacts on job sites.",
+        "role": "Enrouleur professionnel 50 mètres HK-CR50 doté d'un carénage protecteur intégral jaune et noir. 4 prises étanches à clapets IP44, poignée de portage ergonomique et manivelle escamotable.",
+        "role_en": "Enclosed cassette 50m cable drum HK-CR50 protecting cord from dust, water splashes and impacts. 4 IP44 flap sockets and ergonomic carry handle.",
         "specs": [
             "Longueur 50 m",
-            "Carénage hermétique",
-            "Protection intempéries",
-            "Tambour rotatif fluide"
+            "Carénage antichoc jaune/noir",
+            "4 prises étanches à clapets IP44",
+            "Manivelle d'enroulement fluide"
         ],
         "specs_en": [
-            "50m enclosed drum",
-            "Model HK-CR50",
-            "Splash-proof sockets",
-            "Protected casing"
+            "50m enclosed cassette",
+            "Shockproof yellow/black casing",
+            "4 IP44 flap-covered sockets",
+            "Smooth winding knob"
         ]
     },
     {
@@ -795,9 +795,9 @@ const PRODUCTS = [
         "role_en": "Enclosed 25m cable reel offering optimal cable preservation with thermal circuit breaker.",
         "specs": [
             "Longueur 25 m",
-            "Carénage antichoc",
+            "Carénage antichoc jaune/noir",
             "Réf HK-CR25",
-            "Prises protégées"
+            "Prises protégées clapets"
         ],
         "specs_en": [
             "25m enclosed drum",
@@ -816,19 +816,19 @@ const PRODUCTS = [
         "icon": "fa-solid fa-plug-circle-check",
         "role_badge": "Rallonge industrielle 10m EU",
         "role_badge_en": "10m Heavy EU Extension Lead",
-        "role": "Cordon prolongateur de haute sécurité de 10 mètres certifié selon les normes européennes. Câble néoprène résistant aux frottements et graisses.",
-        "role_en": "High-grade rubber insulated 10-meter industrial extension lead (EU standard) resistant to oils and abrasions.",
+        "role": "Cordon prolongateur de haute sécurité de 10 mètres de marque officielle UPSPIRIT. Fiche Schuko renforcée, prise femelle avec clapet étanche IP44 à ressort et sangle velcro de rangement.",
+        "role_en": "Heavy-duty 10-meter UPSPIRIT extension lead with Schuko plug, IP44 spring-loaded waterproof socket flap and velcro storage strap.",
         "specs": [
-            "Longueur 10 mètres",
-            "Certifié Norme EU",
-            "Fiche étanche IP44",
-            "Section de fil renforcée"
+            "Longueur 10 mètres (16A max)",
+            "Prise femelle étanche IP44",
+            "Fiche mâle Schuko renforcée",
+            "Attaches velcro incluses"
         ],
         "specs_en": [
-            "10 meters length",
-            "EU safety standard",
-            "Heavy-gauge wire",
-            "Water-resistant plugs"
+            "10 meters length (16A max)",
+            "IP44 spring-loaded flap socket",
+            "Reinforced Schuko plug",
+            "Velcro tidy straps included"
         ]
     },
     {
@@ -841,19 +841,19 @@ const PRODUCTS = [
         "icon": "fa-solid fa-bolt",
         "role_badge": "Charbon de rechange moteur",
         "role_badge_en": "Replacement Motor Carbon Brush",
-        "role": "Paire de balais de charbon haute densité pour moteurs électriques d'outils électroportatifs. Assure un contact électrique parfait sans étincelage excessif.",
-        "role_en": "High-conductivity replacement carbon brushes for electric tool motors and universal power tools.",
+        "role": "Paire de balais de charbon haute densité gravés UPSPIRIT pour moteurs électriques d'outils électroportatifs. Assure un contact électrique parfait sans étincelage excessif.",
+        "role_en": "High-conductivity genuine UPSPIRIT engraved replacement carbon brushes for electric tool motors and power tools.",
         "specs": [
             "Graphite haute qualité",
             "Ressort & cosse cuivre",
-            "Durabilité prolongée",
-            "Prix unitaire 100 XOF"
+            "Gravure officielle Upspirit",
+            "Durabilité prolongée"
         ],
         "specs_en": [
-            "Motor replacement",
-            "High conductivity",
-            "Wear indicator",
-            "100 XOF each"
+            "Genuine Upspirit engraved",
+            "High conductivity graphite",
+            "Copper helical spring",
+            "Extended motor life"
         ]
     },
     {
@@ -866,19 +866,19 @@ const PRODUCTS = [
         "icon": "fa-solid fa-sparkles",
         "role_badge": "Charbon perforateur lourd",
         "role_badge_en": "Heavy Hammer Drill Carbon Brush",
-        "role": "Charbon spécial pour marteaux perforateurs et piqueurs. Résiste aux fortes vibrations et aux températures de fonctionnement intenses.",
-        "role_en": "Specific carbon brushes for rotary hammers and demolition breakers with auto-cut safety feature.",
+        "role": "Charbon spécial pour marteaux perforateurs et piqueurs gravé UPSPIRIT. Résiste aux fortes vibrations et aux températures de fonctionnement intenses.",
+        "role_en": "Specific genuine UPSPIRIT carbon brushes for rotary hammers and demolition breakers with auto-cut safety feature.",
         "specs": [
             "Adapté aux perforateurs",
-            "Auto-rupteur de sécurité",
-            "Haute conductivité",
-            "Prix unitaire 100 XOF"
+            "Gravure officielle Upspirit",
+            "Ressort cuivre amorti",
+            "Haute conductivité"
         ],
         "specs_en": [
-            "Hammer drill fit",
-            "Auto-cut spring",
-            "Extended lifespan",
-            "100 XOF each"
+            "Rotary hammer fit",
+            "Genuine Upspirit engraved",
+            "Auto-cut safety spring",
+            "Vibration-resistant"
         ]
     },
     {
