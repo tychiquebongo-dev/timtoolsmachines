@@ -24,6 +24,14 @@ Site vitrine e-commerce et catalogue interactif pour **Tim Tools Machines**, dis
 
 ---
 
+## 🌍 Mode Bilingue Intégral (Français 🇫🇷 & Anglais 🇬🇧)
+
+- **Commutateur instantané** : Bouton `FR | EN` accessible en haut à droite sur tous les écrans (desktop et smartphone).
+- **Persistance automatique** : La langue choisie est automatiquement mémorisée dans le navigateur (`localStorage`).
+- **Traduction complète** : Menus, recherche, filtres par catégorie, fiches techniques et rôles des 36 machines UPSPIRIT, panier et messages WhatsApp pré-remplis générés dans la langue choisie.
+
+---
+
 ## 🌟 Caractéristiques du Projet
 
 - **Identité Visuelle Forte** : Thème industriel Noir & Jaune sécurité haute visibilité (style DeWalt / CAT / matériel de chantier pro).

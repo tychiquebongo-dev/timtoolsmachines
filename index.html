@@ -39,9 +39,9 @@
     <div class="top-bar">
         <div class="container top-bar-content">
             <div class="top-bar-info">
-                <span><i class="fa-solid fa-bolt text-yellow"></i> Distributeur Officiel <strong>UPSPIRIT</strong></span>
+                <span><i class="fa-solid fa-bolt text-yellow"></i> <span data-i18n="top_official">Distributeur Officiel</span> <strong>UPSPIRIT</strong></span>
                 <span class="separator">|</span>
-                <span><i class="fa-solid fa-location-dot text-yellow"></i> <strong>Abidjan, Angré Les Oscars</strong> (en diagonale du Centre Médical Hoffmann)</span>
+                <span><i class="fa-solid fa-location-dot text-yellow"></i> <span data-i18n="top_location"><strong>Abidjan, Angré Les Oscars</strong> (en diagonale du Centre Médical Hoffmann)</span></span>
             </div>
             <div class="top-bar-contact">
                 <a href="tel:+2250789557442"><i class="fa-solid fa-phone"></i> +225 07 89 55 74 42</a>
@@ -66,25 +66,41 @@
 
             <nav class="nav-menu" id="navMenu">
                 <ul class="nav-list">
-                    <li><a href="#accueil" class="nav-link active"><i class="fa-solid fa-house"></i> Accueil</a></li>
-                    <li><a href="#apropos" class="nav-link"><i class="fa-solid fa-circle-info"></i> À Propos</a></li>
-                    <li><a href="#machines" class="nav-link"><i class="fa-solid fa-gears"></i> Machines & Outils (36)</a></li>
-                    <li class="hide-on-mobile"><a href="#temoignages" class="nav-link"><i class="fa-solid fa-comments"></i> Avis</a></li>
-                    <li class="hide-on-mobile"><a href="#faq" class="nav-link"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
-                    <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                    <li><a href="#accueil" class="nav-link active"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">Accueil</span></a></li>
+                    <li><a href="#apropos" class="nav-link"><i class="fa-solid fa-circle-info"></i> <span data-i18n="nav_about">À Propos</span></a></li>
+                    <li><a href="#machines" class="nav-link"><i class="fa-solid fa-gears"></i> <span data-i18n="nav_machines">Machines & Outils (36)</span></a></li>
+                    <li class="hide-on-mobile"><a href="#temoignages" class="nav-link"><i class="fa-solid fa-comments"></i> <span data-i18n="nav_reviews">Avis</span></a></li>
+                    <li class="hide-on-mobile"><a href="#faq" class="nav-link"><i class="fa-solid fa-circle-question"></i> <span data-i18n="nav_faq">FAQ</span></a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav_contact">Contact</span></a></li>
                 </ul>
                 <div class="nav-mobile-actions">
+                    <div class="mobile-lang-box">
+                        <span class="mobile-lang-label"><i class="fa-solid fa-globe text-yellow"></i> Langue / Language</span>
+                        <div class="lang-switch">
+                            <button class="lang-btn active" data-lang="fr"><span class="flag">🇫🇷</span> FR</button>
+                            <button class="lang-btn" data-lang="en"><span class="flag">🇬🇧</span> EN</button>
+                        </div>
+                    </div>
                     <a href="https://wa.me/2250715032798?text=Bonjour%20Tim%20Tools%20Machines,%20je%20souhaite%20commander%20du%20mat%C3%A9riel"
                         target="_blank" class="btn btn-whatsapp-large" style="width: 100%;">
-                        <i class="fa-brands fa-whatsapp"></i> WhatsApp : +225 07 15 03 27 98
+                        <i class="fa-brands fa-whatsapp"></i> <span data-i18n="nav_whatsapp_btn">WhatsApp : +225 07 15 03 27 98</span>
                     </a>
                     <a href="tel:+2250789557442" class="btn btn-outline-phone" style="width: 100%;">
-                        <i class="fa-solid fa-phone"></i> Appel : +225 07 89 55 74 42
+                        <i class="fa-solid fa-phone"></i> <span data-i18n="nav_call_btn">Appel : +225 07 89 55 74 42</span>
                     </a>
                 </div>
             </nav>
 
             <div class="header-actions">
+                <!-- LANGUAGE SWITCHER -->
+                <div class="lang-switch" id="headerLangSwitch" role="group" aria-label="Langue / Language">
+                    <button class="lang-btn active" data-lang="fr" title="Passer en Français">
+                        <span class="flag">🇫🇷</span> FR
+                    </button>
+                    <button class="lang-btn" data-lang="en" title="Switch to English">
+                        <span class="flag">🇬🇧</span> EN
+                    </button>
+                </div>
                 <button class="cart-btn" id="openCartBtn" title="Voir le panier">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span class="cart-count" id="cartCount">0</span>
@@ -108,12 +124,12 @@
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="hero-badge animate-fade hide-on-mobile">
-                <i class="fa-solid fa-award"></i> Leader Outillage & Équipements Professionnels
+                <i class="fa-solid fa-award"></i> <span data-i18n="hero_badge">Leader Outillage & Équipements Professionnels</span>
             </div>
             <h1 class="hero-title animate-slide-up">
-                Bienvenue à <span class="highlight-yellow">Tim Tools Machines</span>
+                <span data-i18n="hero_welcome">Bienvenue à</span> <span class="highlight-yellow">Tim Tools Machines</span>
             </h1>
-            <p class="hero-subtitle animate-slide-up delay-1">
+            <p class="hero-subtitle animate-slide-up delay-1" data-i18n="hero_subtitle">
                 Votre partenaire de référence pour la vente d'outillage robuste et de machines haute performance de
                 la marque <strong>UPSPIRIT</strong> à travers le monde. Matériel 100% fiable au meilleur prix.
             </p>
@@ -121,10 +137,10 @@
             <div class="hero-buttons animate-slide-up delay-2">
                 <a href="https://wa.me/2250715032798?text=Bonjour%20Tim%20Tools%20Machines,%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20machines%20et%20outils"
                     target="_blank" class="btn btn-whatsapp-large">
-                    <i class="fa-brands fa-whatsapp"></i> Commander sur WhatsApp
+                    <i class="fa-brands fa-whatsapp"></i> <span data-i18n="hero_cta_whatsapp">Commander sur WhatsApp</span>
                 </a>
                 <a href="#machines" class="btn btn-outline-yellow">
-                    <i class="fa-solid fa-layer-group"></i> Voir nos 36 Machines
+                    <i class="fa-solid fa-layer-group"></i> <span data-i18n="hero_cta_catalog">Voir nos 36 Machines</span>
                 </a>
             </div>
 
@@ -132,19 +148,19 @@
             <div class="hero-stats hide-on-mobile" id="heroStats">
                 <div class="stat-item">
                     <span class="stat-number count-up" data-target="36" data-suffix="+">0</span>
-                    <span class="stat-label">Machines & Équipements</span>
+                    <span class="stat-label" data-i18n="hero_stat_machines">Machines & Équipements</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number count-up" data-target="100" data-suffix="%">0</span>
-                    <span class="stat-label">Marque Upspirit Certifiée</span>
+                    <span class="stat-label" data-i18n="hero_stat_brand">Marque Upspirit Certifiée</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number count-up" data-target="500" data-suffix="+">0</span>
-                    <span class="stat-label">Artisans & Pros Équipés</span>
+                    <span class="stat-label" data-i18n="hero_stat_clients">Artisans & Pros Équipés</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number count-up" data-target="24" data-suffix="/7">0</span>
-                    <span class="stat-label">Assistance WhatsApp</span>
+                    <span class="stat-label" data-i18n="hero_stat_support">Assistance WhatsApp</span>
                 </div>
             </div>
         </div>
@@ -158,14 +174,14 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-text">
-                    <div class="section-tag"><i class="fa-solid fa-industry"></i> QUI SOMMES-NOUS ?</div>
-                    <h2 class="section-title">À Propos de <span class="text-yellow">Tim Tools Machines</span></h2>
-                    <p class="lead-text">
+                    <div class="section-tag"><i class="fa-solid fa-industry"></i> <span data-i18n="about_tag">QUI SOMMES-NOUS ?</span></div>
+                    <h2 class="section-title"><span data-i18n="about_title">À Propos de</span> <span class="text-yellow">Tim Tools Machines</span></h2>
+                    <p class="lead-text" data-i18n="about_lead">
                         <strong>Tim Tools Machines</strong> est une entreprise basée à <strong>Abidjan, Côte d'Ivoire</strong> (Angré Les Oscars, en diagonale du Centre Médical Hoffmann). Nous sommes spécialisés dans la
                         vente et la distribution d'outillage électroportatif, de postes à souder, d'appareils de mesure et de machines
                         professionnelles de la marque <strong>UPSPIRIT</strong>.
                     </p>
-                    <p class="about-subtext">
+                    <p class="about-subtext" data-i18n="about_sub">
                         Tous nos équipements sont neufs, testés et proposés au meilleur tarif direct en Francs CFA (XOF) avec confirmation immédiate sur WhatsApp, retrait sur place à Angré ou expédition rapide.
                     </p>
 
@@ -215,9 +231,9 @@
     <main class="main-catalog" id="machines">
         <div class="container">
             <div class="catalog-header">
-                <div class="section-tag"><i class="fa-solid fa-toolbox"></i> CATALOGUE OFFICIEL</div>
-                <h2 class="section-title">Nos Outils & <span class="text-yellow">Machines Disponibles</span></h2>
-                <p class="section-subtitle">
+                <div class="section-tag"><i class="fa-solid fa-toolbox"></i> <span data-i18n="catalog_tag">CATALOGUE OFFICIEL</span></div>
+                <h2 class="section-title"><span data-i18n="catalog_title">Nos Outils &</span> <span class="text-yellow" data-i18n="catalog_title_highlight">Machines Disponibles</span></h2>
+                <p class="section-subtitle" data-i18n="catalog_subtitle">
                     Explorez l'ensemble de notre gamme professionnelle avec leurs caractéristiques, rôles détaillés et
                     tarifs en FCFA (XOF).
                 </p>
@@ -236,7 +252,7 @@
 
                 <!-- Sort select -->
                 <div class="sort-box">
-                    <label for="sortSelect"><i class="fa-solid fa-arrow-down-wide-short"></i> Trier par :</label>
+                    <label for="sortSelect"><i class="fa-solid fa-arrow-down-wide-short"></i> <span data-i18n="sort_label">Trier par :</span></label>
                     <select id="sortSelect">
                         <option value="default">Recommandés</option>
                         <option value="price-asc">Prix croissant</option>
@@ -248,41 +264,32 @@
 
             <!-- Category Filter Pills -->
             <div class="category-tabs" id="categoryTabs">
-                <button class="cat-pill active" data-category="all"><i class="fa-solid fa-border-all"></i> Tous les
-                    articles <span class="count-badge" id="countAll">36</span></button>
-                <button class="cat-pill" data-category="perforateur"><i class="fa-solid fa-hammer"></i> Perforateurs &
-                    Piqueurs</button>
-                <button class="cat-pill" data-category="meuleuse"><i class="fa-solid fa-compact-disc"></i> Meuleuses &
-                    Découpe</button>
-                <button class="cat-pill" data-category="souffleur"><i class="fa-solid fa-wind"></i> Souffleurs &
-                    Chaleur</button>
-                <button class="cat-pill" data-category="soudure"><i class="fa-solid fa-fire"></i> Soudure &
-                    Établi</button>
-                <button class="cat-pill" data-category="pesage"><i class="fa-solid fa-scale-balanced"></i> Balances &
-                    Mesure</button>
-                <button class="cat-pill" data-category="cables"><i class="fa-solid fa-plug"></i> Câbles &
-                    Enrouleurs</button>
-                <button class="cat-pill" data-category="outillage"><i class="fa-solid fa-wrench"></i> Outillage &
-                    Consommables</button>
-                <button class="cat-pill" data-category="echelles"><i class="fa-solid fa-stairs"></i> Échelles & Travail
-                    en hauteur</button>
+                <button class="cat-pill active" data-category="all"><i class="fa-solid fa-border-all"></i> <span data-i18n="cat_all">Tous les articles</span> <span class="count-badge" id="countAll">36</span></button>
+                <button class="cat-pill" data-category="perforateur"><i class="fa-solid fa-hammer"></i> <span data-i18n="cat_perforateur">Perforateurs & Piqueurs</span></button>
+                <button class="cat-pill" data-category="meuleuse"><i class="fa-solid fa-compact-disc"></i> <span data-i18n="cat_meuleuse">Meuleuses & Découpe</span></button>
+                <button class="cat-pill" data-category="souffleur"><i class="fa-solid fa-wind"></i> <span data-i18n="cat_souffleur">Souffleurs & Chaleur</span></button>
+                <button class="cat-pill" data-category="soudure"><i class="fa-solid fa-fire"></i> <span data-i18n="cat_soudure">Soudure & Établi</span></button>
+                <button class="cat-pill" data-category="pesage"><i class="fa-solid fa-scale-balanced"></i> <span data-i18n="cat_pesage">Balances & Mesure</span></button>
+                <button class="cat-pill" data-category="cables"><i class="fa-solid fa-plug"></i> <span data-i18n="cat_cables">Câbles & Enrouleurs</span></button>
+                <button class="cat-pill" data-category="outillage"><i class="fa-solid fa-wrench"></i> <span data-i18n="cat_outillage">Outillage & Consommables</span></button>
+                <button class="cat-pill" data-category="echelles"><i class="fa-solid fa-stairs"></i> <span data-i18n="cat_echelles">Échelles & Accès</span></button>
             </div>
 
             <!-- Quick Budget Filter Bar -->
             <div class="budget-filter-bar">
-                <span class="budget-label"><i class="fa-solid fa-coins text-yellow"></i> Budget :</span>
+                <span class="budget-label"><i class="fa-solid fa-coins text-yellow"></i> <span data-i18n="budget_label">Budget :</span></span>
                 <div class="budget-pills" id="budgetPills">
-                    <button class="b-pill active" data-budget="all">Tous les prix</button>
-                    <button class="b-pill" data-budget="under10k">&lt; 10 000 XOF</button>
-                    <button class="b-pill" data-budget="10k25k">10 000 - 25 000 XOF</button>
-                    <button class="b-pill" data-budget="above25k">&gt; 25 000 XOF</button>
+                    <button class="b-pill active" data-budget="all" data-i18n="budget_all">Tous les prix</button>
+                    <button class="b-pill" data-budget="under10k" data-i18n="budget_under10k">&lt; 10 000 XOF</button>
+                    <button class="b-pill" data-budget="10k25k" data-i18n="budget_10k25k">10 000 - 25 000 XOF</button>
+                    <button class="b-pill" data-budget="above25k" data-i18n="budget_above25k">&gt; 25 000 XOF</button>
                 </div>
             </div>
 
             <!-- Products Counter & Active Filter Display -->
             <div class="results-bar">
                 <span id="resultsCount">Affichage de <strong>36</strong> machines et outils</span>
-                <span class="delivery-hint"><i class="fa-solid fa-check"></i> Prêts pour expédition immédiate</span>
+                <span class="delivery-hint"><i class="fa-solid fa-check"></i> <span data-i18n="delivery_hint">Prêts pour expédition immédiate</span></span>
             </div>
 
             <!-- ANIMATED PRODUCTS GRID -->
@@ -293,10 +300,10 @@
             <!-- Empty state if search finds nothing -->
             <div class="empty-state" id="emptyState" style="display: none;">
                 <div class="empty-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                <h3>Aucun produit correspondant trouvé</h3>
-                <p>Essayez avec d'autres mots clés ou réinitialisez les filtres.</p>
+                <h3 data-i18n="empty_title">Aucun produit correspondant trouvé</h3>
+                <p data-i18n="empty_desc">Essayez avec d'autres mots clés ou réinitialisez les filtres.</p>
                 <button class="btn btn-warning" id="resetFiltersBtn"><i class="fa-solid fa-rotate-left"></i>
-                    Réinitialiser les filtres</button>
+                    <span data-i18n="empty_reset">Réinitialiser les filtres</span></button>
             </div>
         </div>
     </main>
@@ -472,10 +479,9 @@
         <div class="container">
             <div class="contact-card-wrapper">
                 <div class="contact-info-col">
-                    <div class="section-tag"><i class="fa-solid fa-address-book"></i> CONTACTEZ-NOUS</div>
-                    <h2 class="section-title">Besoin d'une Machine ou d'un <span class="text-yellow">Conseil
-                            Technique</span> ?</h2>
-                    <p class="contact-desc">
+                    <div class="section-tag"><i class="fa-solid fa-address-book"></i> <span data-i18n="contact_tag">CONTACTEZ-NOUS</span></div>
+                    <h2 class="section-title"><span data-i18n="contact_title">Besoin d'une Machine ou d'un</span> <span class="text-yellow" data-i18n="contact_title_highlight">Conseil Technique ?</span></h2>
+                    <p class="contact-desc" data-i18n="contact_desc">
                         L'équipe de <strong>Tim Tools Machines</strong> est à votre écoute pour vos commandes de
                         matériel, demandes de devis sur mesure ou conseils d'utilisation.
                     </p>
@@ -657,7 +663,7 @@
         <div class="drawer-backdrop" id="drawerBackdrop"></div>
         <div class="drawer-content">
             <div class="drawer-header">
-                <h3><i class="fa-solid fa-cart-shopping text-yellow"></i> Votre Panier / Devis</h3>
+                <h3><i class="fa-solid fa-cart-shopping text-yellow"></i> <span data-i18n="drawer_title">Votre Panier / Devis</span></h3>
                 <button class="drawer-close-btn" id="drawerCloseBtn"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="drawer-items" id="drawerItems">
@@ -665,14 +671,14 @@
             </div>
             <div class="drawer-footer" id="drawerFooter">
                 <div class="drawer-total-row">
-                    <span>Total Estimé :</span>
+                    <span data-i18n="drawer_total_label">Total Estimé :</span>
                     <span class="total-amount" id="drawerTotalAmount">0 XOF</span>
                 </div>
                 <button class="btn btn-whatsapp-full" id="sendWhatsAppOrderBtn">
-                    <i class="fa-brands fa-whatsapp"></i> Valider la commande sur WhatsApp
+                    <i class="fa-brands fa-whatsapp"></i> <span data-i18n="drawer_validate_btn">Valider la commande sur WhatsApp</span>
                 </button>
                 <button class="btn btn-outline-clear" id="clearCartBtn">
-                    <i class="fa-solid fa-trash-can"></i> Vider le panier
+                    <i class="fa-solid fa-trash-can"></i> <span data-i18n="drawer_clear_btn">Vider le panier</span>
                 </button>
             </div>
         </div>
