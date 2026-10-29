@@ -791,19 +791,19 @@ const PRODUCTS = [
         "icon": "fa-solid fa-shield-halved",
         "role_badge": "Enrouleur caréné compact 25m",
         "role_badge_en": "25m Compact Enclosed Reel",
-        "role": "Version carénée compacte 25 mètres HK-CR25. Protège parfaitement votre câble électrique lors des déplacements fréquents en atelier et chantier.",
-        "role_en": "Enclosed 25m cable reel offering optimal cable preservation with thermal circuit breaker.",
+        "role": "Enrouleur tambour caréné compact 25 mètres HK-CR25. Boîtier circulaire jaune et noir avec poignée intégrée, 4 prises sécurisées, interrupteur à bascule lumineux et manivelle escamotable.",
+        "role_en": "Compact enclosed 25m cable reel HK-CR25. Yellow & black round housing with integrated top handle, 4 grounded sockets, illuminated switch and fold-out winder crank.",
         "specs": [
             "Longueur 25 m",
-            "Carénage antichoc jaune/noir",
-            "Réf HK-CR25",
-            "Prises protégées clapets"
+            "Modèle HK-CR25",
+            "Interrupteur à bascule étanche",
+            "Manivelle repliable fluide"
         ],
         "specs_en": [
             "25m enclosed drum",
             "Model HK-CR25",
-            "Overheat cutoff",
-            "Compact design"
+            "Illuminated rocker switch",
+            "Fold-out winding crank"
         ]
     },
     {
@@ -858,52 +858,52 @@ const PRODUCTS = [
     },
     {
         "id": "p35",
-        "name": "Balai de charbon perforateur",
-        "name_en": "Hammer Drill Carbon Brushes (Pair)",
+        "name": "Balai de charbon perforateur UP-CB",
+        "name_en": "Hammer Drill Carbon Brushes UP-CB (Pair)",
         "category": "outillage",
         "brand": "UPSPIRIT",
         "image": "images/p35.jpg",
         "icon": "fa-solid fa-sparkles",
-        "role_badge": "Charbon perforateur lourd",
+        "role_badge": "Charbon perforateur lourd UP-CB",
         "role_badge_en": "Heavy Hammer Drill Carbon Brush",
-        "role": "Charbon spécial pour marteaux perforateurs et piqueurs gravé UPSPIRIT. Résiste aux fortes vibrations et aux températures de fonctionnement intenses.",
-        "role_en": "Specific genuine UPSPIRIT carbon brushes for rotary hammers and demolition breakers with auto-cut safety feature.",
+        "role": "Paire de balais de charbon haute densité pour marteaux perforateurs et piqueurs. Gravure officielle Upspirit UP-CB, ressorts hélicoïdaux en cuivre et cosses plates de connexion rapide.",
+        "role_en": "Pair of high-density carbon brushes for rotary hammers and demolition breakers. Genuine Upspirit UP-CB laser engraving, copper springs and flat brass spade connectors.",
         "specs": [
-            "Adapté aux perforateurs",
-            "Gravure officielle Upspirit",
-            "Ressort cuivre amorti",
-            "Haute conductivité"
+            "Réf officielle UP-CB",
+            "Gravure laser Upspirit",
+            "Ressorts cuivre & cosses plates",
+            "Haute résistance thermique"
         ],
         "specs_en": [
-            "Rotary hammer fit",
-            "Genuine Upspirit engraved",
-            "Auto-cut safety spring",
-            "Vibration-resistant"
+            "Official ref UP-CB",
+            "Laser engraved Upspirit",
+            "Copper springs & spade lugs",
+            "High thermal resistance"
         ]
     },
     {
         "id": "p36",
-        "name": "Échelles et escabeaux professionnels (Ladder tout type)",
-        "name_en": "Ladders of All Types (Telescopic / Stepladder / Multi-position)",
+        "name": "Échelle & Escabeau articulé télescopique UPSPIRIT",
+        "name_en": "UPSPIRIT Multi-Position Articulated Telescopic Ladder",
         "category": "echelles",
         "brand": "UPSPIRIT",
         "image": "images/p36.jpg",
         "icon": "fa-solid fa-stairs",
-        "role_badge": "Accès sécurisé en hauteur",
-        "role_badge_en": "Professional Height Access",
-        "role": "Gamme complète d'échelles télescopiques en aluminium, escabeaux pliants de sécurité, échelles transformables et articulées multi-usages.",
-        "role_en": "Full range of professional aluminum ladders: telescopic, multi-purpose, extension and stepladders for safe height work.",
+        "role_badge": "Échelle articulée multifonction",
+        "role_badge_en": "Multi-Position Articulated Ladder",
+        "role": "Échelle et escabeau articulé transformable de marque officielle UPSPIRIT. Montants renforcés jaunes, charnières de sécurité à verrouillage multiposition et barre stabilisatrice avec patins antidérapants.",
+        "role_en": "Professional genuine UPSPIRIT articulated multi-position ladder and stepladder. Reinforced yellow stiles, multi-angle locking hinges and wide stabilizer bar with anti-slip feet.",
         "specs": [
-            "Aluminium aéronautique",
-            "Hauteurs sur mesure",
-            "Pieds antidérapants",
-            "Sur devis personnalisé"
+            "Marque officielle UPSPIRIT",
+            "Charnières articulées multipositions",
+            "Configuration échelle & escabeau",
+            "Pieds stabilisateurs antidérapants"
         ],
         "specs_en": [
-            "All models available",
-            "Aviation aluminum",
-            "Non-slip rungs",
-            "Quote on request"
+            "Official brand UPSPIRIT",
+            "Multi-angle locking hinges",
+            "Ladder & Stepladder setup",
+            "Wide anti-slip stabilizer base"
         ]
     }
 ];
