@@ -337,7 +337,7 @@ button, input, select {
     align-items: center;
     justify-content: space-between;
     height: 76px;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .logo {
@@ -345,6 +345,7 @@ button, input, select {
     align-items: center;
     gap: 0.85rem;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .logo-icon {
@@ -400,21 +401,32 @@ button, input, select {
     border: 1px solid var(--yellow-primary);
 }
 
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
 .nav-list {
     display: flex;
     align-items: center;
-    gap: 2.2rem;
+    justify-content: center;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .nav-link {
     font-family: var(--font-heading);
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
+    letter-spacing: 0.6px;
     color: var(--text-secondary);
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0.2rem;
+    padding: 0.5rem 0.35rem;
     position: relative;
     transition: color var(--transition-fast);
 }
@@ -422,11 +434,13 @@ button, input, select {
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     width: 0%;
-    height: 2px;
+    height: 2.5px;
+    border-radius: 2px;
     background-color: var(--yellow-primary);
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.6);
     transition: width var(--transition-normal);
 }
 
@@ -441,7 +455,8 @@ button, input, select {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1.15rem;
+    flex-shrink: 0;
 }
 
 .cart-btn {
@@ -555,15 +570,6 @@ button, input, select {
     gap: 0.4rem;
 }
 
-.header-cta {
-    display: none;
-}
-
-@media (min-width: 992px) {
-    .header-cta {
-        display: inline-flex;
-    }
-}
 
 .mobile-toggle {
     display: none;
@@ -2946,6 +2952,8 @@ button, input, select {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        align-items: stretch;
+        flex: none;
         z-index: 999;
     }
 
@@ -2956,6 +2964,7 @@ button, input, select {
     .nav-list {
         flex-direction: column;
         align-items: stretch;
+        justify-content: flex-start;
         gap: 0.85rem;
         width: 100%;
     }
@@ -2968,8 +2977,13 @@ button, input, select {
         border-radius: var(--radius-md);
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 0.75rem;
         color: var(--text-primary);
+    }
+
+    .nav-link::after {
+        display: none;
     }
 
     .nav-link:hover, .nav-link.active {
