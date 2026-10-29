@@ -108,27 +108,27 @@ const PRODUCTS = [
     },
     {
         "id": "p5",
-        "name": "Souffleur électrique standard bleu",
-        "name_en": "Standard Electric Blower (Blue)",
+        "name": "Souffleur électrique compact d'atelier UPSPIRIT",
+        "name_en": "Compact Workshop Electric Air Blower UPSPIRIT",
         "category": "souffleur",
         "brand": "UPSPIRIT",
         "image": "images/p5.jpg",
         "icon": "fa-solid fa-wind",
-        "role_badge": "Nettoyage & Dépoussiérage atelier",
-        "role_badge_en": "Workshop Dusting & Cleaning",
-        "role": "Souffleur compact léger bleu pour dépoussiérage des ateliers, ordinateurs, tableaux électriques, climatiseurs et surfaces de travail.",
-        "role_en": "Compact lightweight electric blower for dust cleaning in workshops, AC units, computer hardware and electrical cabinets.",
+        "role_badge": "Dépoussiérage & Nettoyage rapide",
+        "role_badge_en": "Fast Dusting & Workshop Cleanup",
+        "role": "Souffleur électrique compact ergonomique jaune & noir officiel UPSPIRIT. Conçu pour le nettoyage rapide et efficace des postes de travail, machines, climatiseurs, armoires électriques et zones difficiles d'accès.",
+        "role_en": "Official UPSPIRIT ergonomic compact yellow & black electric air blower. Engineered for fast, efficient clearing of workbenches, machinery, AC units, electronics and hard-to-reach areas.",
         "specs": [
-            "Filaire haute vitesse",
-            "Buse souple fournie",
-            "Poignée ergonomique",
-            "Léger & maniable"
+            "Modèle compact UPSPIRIT",
+            "Buse directionnelle souple",
+            "Moteur dynamique haute vitesse",
+            "Gâchette ergonomique verrouillable"
         ],
         "specs_en": [
-            "High-speed motor",
-            "Flexible nozzle included",
-            "Ergonomic grip",
-            "Light & compact"
+            "Official UPSPIRIT compact model",
+            "Flexible directional nozzle",
+            "High-speed airflow motor",
+            "Ergonomic lock-on trigger"
         ]
     },
     {
@@ -233,52 +233,52 @@ const PRODUCTS = [
     },
     {
         "id": "p10",
-        "name": "Marteau perforateur rotatif 24 mm",
-        "name_en": "Rotary Hammer Drill 24mm",
+        "name": "Marteau perforateur rotatif 24 mm SDS-Plus UPSPIRIT",
+        "name_en": "24mm SDS-Plus Rotary Hammer Drill UPSPIRIT",
         "category": "perforateur",
         "brand": "UPSPIRIT",
         "image": "images/p10.jpg",
         "icon": "fa-solid fa-screwdriver-wrench",
-        "role_badge": "Passage tuyaux & Gaines 24mm",
-        "role_badge_en": "24mm Pipe & Conduit Drilling",
-        "role": "Perforateur multi-fonctions 24 mm avec excellente énergie d'impact. Recommandé pour maçons, électriciens et installateurs de sanitaires.",
-        "role_en": "Multi-function 24mm rotary hammer with high impact energy. Recommended for masonry, electrical conduits and plumbing installations.",
+        "role_badge": "Forage & Percussion SDS-Plus 24mm",
+        "role_badge_en": "24mm SDS-Plus Rotary Hammer",
+        "role": "Marteau perforateur rotatif 24 mm officiel UPSPIRIT. Sélecteur 3 modes (perçage rotatif, perforation avec frappe pneumatique, burinage d'ajustement), carter robuste, poignée auxiliaire 360° et jauge de profondeur.",
+        "role_en": "Official UPSPIRIT 24mm SDS-Plus rotary hammer drill. 3-mode selector (drilling, pneumatic hammer drilling, light chiseling), rugged housing, 360° auxiliary handle and depth gauge rod.",
         "specs": [
-            "Diamètre 24 mm",
-            "Frappe pneumatique",
-            "Sélecteur 3 modes",
-            "Variateur de vitesse"
+            "Mandrin SDS-Plus 24 mm",
+            "Frappe pneumatique haute cadence",
+            "Sélecteur 3 modes de travail",
+            "Poignée auxiliaire 360° + jauge"
         ],
         "specs_en": [
-            "24mm max diameter",
-            "Pneumatic impact",
-            "3-mode selector",
-            "Variable speed trigger"
+            "24mm SDS-Plus keyed/quick chuck",
+            "High-frequency pneumatic impact",
+            "3 functional work modes",
+            "360° aux handle + depth stop"
         ]
     },
     {
         "id": "p11",
-        "name": "Marteau perforateur rotatif 26 mm",
-        "name_en": "Rotary Hammer Drill 26mm",
+        "name": "Marteau perforateur rotatif 26 mm lourd UPSPIRIT",
+        "name_en": "Heavy-Duty 26mm SDS-Plus Rotary Hammer UPSPIRIT",
         "category": "perforateur",
         "brand": "UPSPIRIT",
         "image": "images/p11.jpg",
         "icon": "fa-solid fa-gear",
-        "role_badge": "Perforation béton armé 26mm",
-        "role_badge_en": "26mm Reinforced Concrete Drilling",
-        "role": "Machine robuste 26 mm à force de frappe élevée pour perçages réguliers dans le béton armé et petites opérations de burinage.",
-        "role_en": "Heavy-duty 26mm rotary hammer drill delivering powerful impact for reinforced concrete drilling and light chiseling.",
+        "role_badge": "Perforation béton armé & Burinage 26mm",
+        "role_badge_en": "26mm Heavy Concrete Drilling",
+        "role": "Perforateur burineur lourd 26 mm officiel UPSPIRIT avec carter mécanique en alliage métallique. Puissance d'impact supérieure pour perçages intensifs dans le béton armé, la pierre et démolition légère.",
+        "role_en": "Official UPSPIRIT heavy-duty 26mm rotary hammer drill featuring a rugged metal alloy gearbox. High-impact energy engineered for intensive drilling in reinforced concrete, stone and light demolition.",
         "specs": [
-            "Diamètre 26 mm",
-            "Force de percussion élevée",
-            "Carter alliage",
-            "Protection anti-vibration"
+            "Diamètre de perçage 26 mm",
+            "Carter en alliage d'aluminium",
+            "Force de frappe pneumatique lourde",
+            "Système anti-vibration & D-Handle"
         ],
         "specs_en": [
-            "26mm max diameter",
-            "High impact force",
-            "Alloy gear housing",
-            "Anti-vibration design"
+            "26mm max drilling diameter",
+            "Rugged aluminum alloy gearbox",
+            "Heavy-duty pneumatic impact force",
+            "Anti-vibration system & D-handle"
         ]
     },
     {
@@ -683,27 +683,27 @@ const PRODUCTS = [
     },
     {
         "id": "p28",
-        "name": "Perceuse électrique filaire 13mm HK-ED1305",
-        "name_en": "Corded Electric Drill 13mm HK-ED1305",
+        "name": "Perceuse électrique filaire 13mm UPSPIRIT HK-ED1305",
+        "name_en": "Corded Electric Drill 13mm UPSPIRIT HK-ED1305",
         "category": "outillage",
         "brand": "UPSPIRIT",
         "image": "images/p28.jpg",
         "icon": "fa-solid fa-bore-hole",
         "role_badge": "Perçage filaire précis 13mm",
         "role_badge_en": "13mm Precise Corded Drilling",
-        "role": "Perceuse électrique maniable HK-ED1305 avec mandrin à clé 13 mm. Inverseur de sens de rotation et variateur pour forer bois, métal et plastique.",
-        "role_en": "Compact 13mm keyed chuck drill with reverse switch and speed control. Ideal for steel, wood and plastic drilling.",
+        "role": "Perceuse électrique maniable et puissante officielle UPSPIRIT modèle HK-ED1305. Mandrin tout acier 13 mm à clé, poignée auxiliaire 360°, réglette de profondeur, inverseur de sens et variateur électronique pour percer avec précision bois, métal, maçonnerie et plastique.",
+        "role_en": "Official UPSPIRIT heavy-duty 13mm corded drill model HK-ED1305. Features an all-steel 13mm keyed chuck, 360° aux handle, depth rod, reverse switch and electronic variable speed for accurate drilling in steel, wood, masonry and plastic.",
         "specs": [
-            "Mandrin à clé 13 mm",
-            "Réf HK-ED1305",
-            "Poignée auxiliaire + butée",
-            "Clé de serrage fournie"
+            "Mandrin acier à clé 13 mm",
+            "Modèle officiel UPSPIRIT",
+            "Poignée auxiliaire 360° + butée",
+            "Variateur et inverseur de sens"
         ],
         "specs_en": [
-            "13mm keyed chuck",
-            "Model HK-ED1305",
-            "Aux handle + depth rod",
-            "Chuck key included"
+            "13mm keyed steel chuck",
+            "Official UPSPIRIT model",
+            "360° aux handle + depth stop",
+            "Variable speed + reverse switch"
         ]
     },
     {
