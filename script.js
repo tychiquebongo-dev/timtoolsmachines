@@ -641,19 +641,19 @@ const PRODUCTS = [
         "icon": "fa-solid fa-ring",
         "role_badge": "Affûtage d'outils atelier 150mm",
         "role_badge_en": "150mm Tool Sharpening",
-        "role": "Touret d'établi 150 mm HK-BG601 à deux meules (ébauche et finition). Indispensable pour affûter mèches, forets, ciseaux à bois et burins.",
-        "role_en": "Twin-wheel 150mm bench grinder for sharpening drill bits, chisels, lawnmower blades and metal deburring.",
+        "role": "Touret d'établi 150 mm HK-BG601 à deux meules (ébauche et finition). Écrans pare-étincelles transparents et porte-outils réglables pour l'affûtage de mèches, forets, ciseaux et burins.",
+        "role_en": "Twin-wheel 150mm (6\") bench grinder HK-BG601 with dual transparent spark shields and adjustable tool rests. Ideal for sharpening drill bits, chisels and metal deburring.",
         "specs": [
             "Meules 150 mm (6\")",
-            "Réf HK-BG601",
-            "Pare-étincelles réglables",
-            "Moteur induction silencieux"
+            "Modèle HK-BG601",
+            "Écrans pare-étincelles réglables",
+            "Socle fonte anti-vibrations"
         ],
         "specs_en": [
-            "Wheel 150mm (6\")",
+            "Wheels 150mm (6\")",
             "Model HK-BG601",
-            "Dual spark shields",
-            "Cast iron base"
+            "Adjustable spark shields",
+            "Anti-vibration cast base"
         ]
     },
     {
@@ -666,19 +666,19 @@ const PRODUCTS = [
         "icon": "fa-solid fa-gears",
         "role_badge": "Meulage atelier lourd 200mm",
         "role_badge_en": "200mm Heavy Workshop Grinding",
-        "role": "Grand touret d'atelier 200 mm HK-BG801 lourd et stable. Conçu pour le meulage intensif de grosses pièces métalliques et réaffûtage d'outils lourds.",
-        "role_en": "Heavy-duty 200mm bench grinder with powerful induction motor for intensive sharpening and workshop grinding.",
+        "role": "Grand touret d'atelier 200 mm HK-BG801 lourd et stable. Équipé de deux meules 200 mm grand diamètre pour l'écroûtage, le meulage intensif de pièces métalliques et le réaffûtage lourd.",
+        "role_en": "Heavy-duty 200mm (8\") bench grinder HK-BG801 with powerful induction motor for intensive sharpening, heavy metal grinding and tool restoration.",
         "specs": [
             "Meules 200 mm (8\")",
-            "Réf HK-BG801",
-            "Socle fonte antivibrations",
-            "Éclairage de travail"
+            "Modèle HK-BG801",
+            "Écrans de protection transparents",
+            "Socle fonte d'atelier robuste"
         ],
         "specs_en": [
-            "Wheel 200mm (8\")",
+            "Wheels 200mm (8\")",
             "Model HK-BG801",
-            "Induction quiet motor",
-            "Adjustable tool rests"
+            "Clear safety eye shields",
+            "Heavy-duty cast iron base"
         ]
     },
     {
