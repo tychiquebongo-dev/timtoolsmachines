@@ -583,25 +583,25 @@ const PRODUCTS = [
     },
     {
         "id": "p24",
-        "name": "Tronçonneuse à métaux / Découpeuse 355mm OKM-355A",
-        "name_en": "Metal Cut-Off Saw 355mm OKM-355A",
+        "name": "Tronçonneuse à métaux / Découpeuse 355mm UPSPIRIT HK-CM355",
+        "name_en": "Metal Cut-Off Saw 355mm UPSPIRIT HK-CM355",
         "category": "meuleuse",
         "brand": "UPSPIRIT",
         "image": "images/p24.jpg",
         "icon": "fa-solid fa-circle-dot",
         "role_badge": "Découpe pendulaire acier 355mm",
         "role_badge_en": "355mm Steel Chop Sawing",
-        "role": "Tronçonneuse pendulaire 355 mm OKM-355A pour la découpe à froid nette et rapide de fers ronds, cornières, poutrelles et tubes acier.",
-        "role_en": "Stationary abrasive metal cut-off saw 355mm (14\") for rapid cutting of steel pipes, angles, tubes and solid bars.",
+        "role": "Tronçonneuse pendulaire 355 mm de marque officielle UPSPIRIT pour la découpe à froid nette et rapide de fers ronds, cornières, poutrelles et tubes acier.",
+        "role_en": "Stationary abrasive metal cut-off saw 355mm (14\") by official brand UPSPIRIT for rapid cutting of steel pipes, angles, tubes and solid bars.",
         "specs": [
             "Disque 355 mm (14\")",
-            "Réf OKM-355A",
+            "Marque UPSPIRIT",
             "Étau de serrage rapide",
             "Capot enveloppant"
         ],
         "specs_en": [
             "Abrasive disc 355mm",
-            "Model OKM-355A",
+            "Brand UPSPIRIT",
             "Quick-clamp vise",
             "Full spark deflector"
         ]
@@ -708,25 +708,25 @@ const PRODUCTS = [
     },
     {
         "id": "p29",
-        "name": "Enrouleur de câble électrique 25m OKEM-CR25",
-        "name_en": "Cable Extension Reel 25m OKEM-CR25",
+        "name": "Enrouleur de câble électrique 25m UPSPIRIT HK-CR25",
+        "name_en": "Cable Extension Reel 25m UPSPIRIT HK-CR25",
         "category": "cables",
         "brand": "UPSPIRIT",
         "image": "images/p29.jpg",
         "icon": "fa-solid fa-satellite-dish",
         "role_badge": "Alimentation mobile sécurisée 25m",
         "role_badge_en": "25m Safe Mobile Power Reel",
-        "role": "Tambour enrouleur 25 mètres modèle OKEM-CR25. Châssis métallique stable, 4 prises protégées avec clapets et coupe-circuit thermique.",
-        "role_en": "25-meter heavy-duty cable reel on steel frame with thermal overload cut-out and 4 socket outlets.",
+        "role": "Tambour enrouleur 25 mètres de marque officielle UPSPIRIT HK-CR25. Châssis métallique stable, 4 prises protégées avec clapets et coupe-circuit thermique.",
+        "role_en": "UPSPIRIT 25-meter heavy-duty cable reel on steel frame with thermal overload cut-out and 4 socket outlets.",
         "specs": [
             "Longueur 25 mètres",
-            "Réf OKEM-CR25",
+            "Marque UPSPIRIT",
             "4 prises 230V",
             "Disjoncteur thermique"
         ],
         "specs_en": [
             "25 meters length",
-            "Model OKEM-CR25",
+            "Brand UPSPIRIT",
             "4 grounded sockets",
             "Steel tubular frame"
         ]
@@ -980,9 +980,9 @@ const TRANSLATIONS = {
         "empty_title": "Aucun produit correspondant trouvé",
         "empty_desc": "Essayez avec d'autres mots clés ou réinitialisez les filtres.",
         "empty_reset": "Réinitialiser les filtres",
-        "card_stock": "In Stock - Ready to Ship",
+        "card_stock": "En Stock - Prêt à livrer",
         "card_price_label": "Prix Tarif",
-        "card_order_btn": "Order on WhatsApp",
+        "card_order_btn": "Commander",
         "card_quote": "Sur devis",
         "contact_tag": "CONTACTEZ-NOUS",
         "contact_title": "Besoin d'une Machine ou d'un",
@@ -1021,7 +1021,7 @@ const TRANSLATIONS = {
         "toast_empty": "Votre panier est vide !",
         "modal_specs_title": "Fiche Technique & Points Forts",
         "modal_role_title": "Rôle & Description Détaillée",
-        "modal_order_btn": "Order on WhatsApp",
+        "modal_order_btn": "Commander",
         "modal_add_btn": "Ajouter au Panier"
     },
     "en": {
@@ -1038,7 +1038,7 @@ const TRANSLATIONS = {
         "hero_badge": "Leading Professional Tools & Equipment",
         "hero_welcome": "Welcome to",
         "hero_subtitle": "Your premier partner for durable tools and high-performance machinery from <strong>UPSPIRIT</strong> worldwide. 100% reliable equipment at the best prices.",
-        "hero_cta_whatsapp": "Order on WhatsApp",
+        "hero_cta_whatsapp": "Commander sur WhatsApp",
         "hero_cta_catalog": "View our 36 Machines",
         "hero_stat_machines": "Machines & Tools",
         "hero_stat_brand": "Certified Upspirit Brand",
@@ -1086,7 +1086,7 @@ const TRANSLATIONS = {
         "empty_reset": "Reset Filters",
         "card_stock": "In Stock - 24h Shipping",
         "card_price_label": "List Price",
-        "card_order_btn": "Order",
+        "card_order_btn": "Commander",
         "card_quote": "On Quote",
         "contact_tag": "CONTACT US",
         "contact_title": "Need a Machine or",
@@ -1100,7 +1100,7 @@ const TRANSLATIONS = {
         "contact_shipping_label": "Shipping & Pickup",
         "contact_shipping_text": "In-store pickup or fast dispatch throughout Ivory Coast & internationally",
         "contact_box_badge": "Team Available on WhatsApp",
-        "contact_box_title": "Order Directly Online",
+        "contact_box_title": "Commander Directement en Ligne",
         "contact_box_desc": "Click below to chat immediately with our sales team on WhatsApp:",
         "contact_box_wa_btn": "Chat on WhatsApp (+225 07 15 03 27 98)",
         "contact_box_or": "OR CALL DIRECTLY",
@@ -1115,7 +1115,7 @@ const TRANSLATIONS = {
         "footer_credit": "Engineered with <i class=\"fa-solid fa-bolt text-yellow\"></i> for industry professionals.",
         "drawer_title": "Your Cart / Quote",
         "drawer_total_label": "Estimated Total:",
-        "drawer_validate_btn": "Confirm Order via WhatsApp",
+        "drawer_validate_btn": "Commander sur WhatsApp",
         "drawer_clear_btn": "Clear Cart",
         "drawer_empty": "Your cart is empty",
         "drawer_empty_desc": "Explore our catalog and add the machines of your choice.",
@@ -1125,7 +1125,7 @@ const TRANSLATIONS = {
         "toast_empty": "Your cart is empty!",
         "modal_specs_title": "Technical Specifications & Highlights",
         "modal_role_title": "Role & Detailed Description",
-        "modal_order_btn": "Order on WhatsApp",
+        "modal_order_btn": "Commander",
         "modal_add_btn": "Add to Cart"
     }
 };
