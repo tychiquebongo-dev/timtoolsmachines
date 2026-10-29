@@ -133,52 +133,52 @@ const PRODUCTS = [
     },
     {
         "id": "p6",
-        "name": "Souffleur électrique jaune",
-        "name_en": "Electric Blower (Yellow)",
+        "name": "Souffleur électrique jaune haute vitesse HK-BL3008",
+        "name_en": "High-Speed Yellow Electric Blower HK-BL3008",
         "category": "souffleur",
         "brand": "UPSPIRIT",
         "image": "images/p6.jpg",
         "icon": "fa-solid fa-fan",
         "role_badge": "Soufflage copeaux & Sciures",
         "role_badge_en": "Sawdust & Debris Sweeping",
-        "role": "Souffleur électrique classique de couleur jaune avec moteur à régime accéléré, idéal pour le nettoyage des copeaux et débris de sciage.",
-        "role_en": "Classic yellow electric blower with high-velocity airflow for workshop sawdust and debris removal.",
+        "role": "Souffleur électrique haute vitesse modèle HK-BL3008 avec buse longue directionnelle. Idéal pour l'expulsion rapide des sciures de bois, copeaux d'usinage et poussières d'atelier.",
+        "role_en": "High-velocity electric air blower model HK-BL3008 with long directional nozzle. Perfect for rapid sawdust clearance, machining debris and workshop dusting.",
         "specs": [
-            "Turbine équilibrée",
-            "Débit d'air renforcé",
-            "Fonction aspiration",
-            "Double isolation"
+            "Modèle HK-BL3008",
+            "Moteur haute vitesse",
+            "Buse longue directionnelle",
+            "Gâchette avec verrouillage"
         ],
         "specs_en": [
-            "Balanced impeller",
-            "Enhanced airflow",
-            "Blowing/suction mode",
-            "Double insulated"
+            "Model HK-BL3008",
+            "High-speed motor",
+            "Long directional nozzle",
+            "Trigger lock-on button"
         ]
     },
     {
         "id": "p7",
-        "name": "Souffleur électrique renforcé",
-        "name_en": "Heavy-Duty Electric Blower",
-        "category": "souffleur",
+        "name": "Polisseuse / Lustreuse rotative d'angle UPSPIRIT",
+        "name_en": "Professional Rotary Car Polisher & Buffer UPSPIRIT",
+        "category": "meuleuse",
         "brand": "UPSPIRIT",
         "image": "images/p7.jpg",
-        "icon": "fa-solid fa-tornado",
-        "role_badge": "Soufflage haute vitesse renforcé",
-        "role_badge_en": "High-Velocity Site Blower",
-        "role": "Modèle renforcé pour usage professionnel régulier. Boîtier résistant aux chocs, débit d'air puissant pour expulsion rapide des résidus tenaces.",
-        "role_en": "Reinforced model for regular workshop usage. Impact-resistant housing and high-power airflow for stubborn debris.",
+        "icon": "fa-solid fa-compact-disc",
+        "role_badge": "Lustrage carrosserie & Finitions",
+        "role_badge_en": "Car Polishing & Detailing",
+        "role": "Polisseuse lustreuse rotative ergonomique avec disque mousse et variateur de vitesse. Idéale pour le lustrage de carrosseries automobiles, l'élimination des micro-rayures et le cirage de finitions miroir.",
+        "role_en": "Ergonomic rotary polisher with foam buffing pad and variable speed. Perfect for automotive detailing, scratch removal, waxing and mirror finish polishing.",
         "specs": [
-            "Moteur blindé",
-            "Débit supérieur",
-            "Résistance thermique",
-            "Usage soutenu"
+            "Disque mousse de polissage",
+            "Variateur de vitesse",
+            "Poignée auxiliaire latérale",
+            "Bouton de verrouillage continu"
         ],
         "specs_en": [
-            "Reinforced motor",
-            "Higher air volume",
-            "Thermal protection",
-            "Heavy-duty cycle"
+            "Foam buffing pad included",
+            "Variable speed dial",
+            "Ergonomic side grip",
+            "Continuous lock button"
         ]
     },
     {
@@ -419,16 +419,16 @@ const PRODUCTS = [
         "role": "Meuleuse d'angle compacte 115 mm HK-G2-115 pour coupes rapides de tubes, fers plats, carrelages et travaux d'ébarbage en espaces étroits.",
         "role_en": "Compact 115mm angle grinder for precision metal cutting, deburring, sharpening and grinding in tight spaces.",
         "specs": [
-            "Disque 115 mm",
+            "Disque 115 mm (4.5\")",
             "Modèle HK-G2-115",
-            "Corps profilé fin",
-            "Carter protecteur réglable"
+            "Carter orientable + poignée",
+            "Clé à ergots incluse"
         ],
         "specs_en": [
             "Disc 115mm (4.5\")",
             "Model HK-G2-115",
-            "High-speed motor",
-            "Protective safety guard"
+            "Adjustable guard + handle",
+            "Pin spanner included"
         ]
     },
     {
@@ -444,66 +444,66 @@ const PRODUCTS = [
         "role": "La meuleuse polyvalente par excellence en 125 mm. Moteur puissant et équilibré pour tronçonner et meuler métal, maçonnerie et dalles.",
         "role_en": "Standard 125mm grinder with slim body and optimal torque. The go-to tool for ironworkers, pipefitters and building sites.",
         "specs": [
-            "Disque 125 mm",
-            "Moteur haute performance",
-            "Blocage de broche",
-            "Poignée 2 positions"
+            "Disque 125 mm (5\")",
+            "Interrupteur à glissière",
+            "Poignée latérale 2 positions",
+            "Blocage d'arbre rapide"
         ],
         "specs_en": [
             "Disc 125mm (5\")",
-            "Ergonomic slim body",
-            "Side handle included",
-            "Spindle lock"
+            "Slide on/off switch",
+            "2-position side handle",
+            "Spindle lock button"
         ]
     },
     {
         "id": "p19",
-        "name": "Meuleuse d'angle 180mm",
-        "name_en": "Angle Grinder 180mm",
+        "name": "Meuleuse d'angle semi-lourde 180mm",
+        "name_en": "Heavy-Duty Angle Grinder 180mm",
         "category": "meuleuse",
         "brand": "UPSPIRIT",
         "image": "images/p19.jpg",
-        "icon": "fa-solid fa-circle-notch",
+        "icon": "fa-solid fa-gear",
         "role_badge": "Découpe profonde fers 180mm",
         "role_badge_en": "180mm Deep Rebar Cutting",
-        "role": "Meuleuse semi-lourde 180 mm offrant une profondeur de coupe supérieure pour profilés épais, tuyaux métalliques de gros diamètre et maçonnerie.",
-        "role_en": "Semi-heavy 180mm grinder with robust gear head for deep pipe cutting, thick rebar and heavy steel grinding.",
+        "role": "Meuleuse 180 mm haute endurance avec poignée arrière étrier D-handle pour découpes profondes dans les profilés métalliques épais, poutrelles et rails.",
+        "role_en": "Heavy-duty 180mm (7\") angle grinder with rear loop handle for deep cuts in structural steel, thick rebars and beam channels.",
         "specs": [
-            "Disque 180 mm",
-            "Puissance élevée",
-            "Poignée arrière rotative",
-            "Démarrage progressif"
+            "Disque 180 mm (7\")",
+            "Poignée arrière étrier",
+            "Moteur couple élevé",
+            "Accès charbons externe"
         ],
         "specs_en": [
             "Disc 180mm (7\")",
-            "Reinforced motor",
-            "Vibration reduction",
-            "Heavy-duty cutting"
+            "Rear D-handle grip",
+            "High-torque motor",
+            "External brush caps"
         ]
     },
     {
         "id": "p20",
         "name": "Meuleuse d'angle grand format 230mm HK-AG180",
-        "name_en": "Heavy Angle Grinder 230mm HK-AG180",
+        "name_en": "Heavy Industrial Angle Grinder 230mm HK-AG180",
         "category": "meuleuse",
         "brand": "UPSPIRIT",
         "image": "images/p20.jpg",
-        "icon": "fa-solid fa-circle-notch",
+        "icon": "fa-solid fa-burst",
         "role_badge": "Sciage gros œuvre 230mm",
         "role_badge_en": "230mm Heavy Masonry Sawing",
-        "role": "Très grand modèle 230 mm HK-AG180 pour gros travaux de chantier et métallurgie lourde. Coupe profonde des blocs de béton et structures en acier.",
-        "role_en": "Extra-large 230mm angle grinder for masonry sawing, concrete slabs, thick beam cutting and major industrial work.",
+        "role": "Très grand modèle 230 mm HK-AG180 pour gros travaux de chantier et métallurgie lourde. Coupe profonde des blocs de béton, dalles et structures en acier.",
+        "role_en": "Extra-large 230mm angle grinder HK-AG180 for heavy construction: cutting concrete slabs, paving blocks, curb stones and heavy industrial steel.",
         "specs": [
-            "Grand disque 230 mm",
+            "Grand disque 230 mm (9\")",
             "Réf HK-AG180",
-            "Moteur ultra-puissant",
-            "Sécurité anti-rebond"
+            "Poignée étrier anti-fatigue",
+            "Carter orientable renforcé"
         ],
         "specs_en": [
             "Disc 230mm (9\")",
             "Model HK-AG180",
-            "Rotating handle",
-            "Heavy industrial power"
+            "Anti-fatigue D-handle",
+            "Reinforced guard"
         ]
     },
     {
