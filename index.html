@@ -90,14 +90,23 @@
             </nav>
 
             <div class="header-actions">
-                <!-- LANGUAGE SWITCHER -->
-                <div class="lang-switch" id="headerLangSwitch" role="group" aria-label="Langue / Language">
-                    <button class="lang-btn active" data-lang="fr" title="Passer en Français">
-                        <span class="flag">🇫🇷</span> FR
+                <!-- LANGUAGE DROPDOWN (MOBILE & DESKTOP) -->
+                <div class="lang-dropdown" id="headerLangDropdown">
+                    <button class="lang-dropdown-btn" id="langDropdownBtn" aria-label="Sélectionner la langue" aria-expanded="false" type="button">
+                        <span class="flag" id="currentLangFlag">🇫🇷</span>
+                        <span class="lang-code" id="currentLangCode">FR</span>
+                        <i class="fa-solid fa-chevron-down lang-chevron"></i>
                     </button>
-                    <button class="lang-btn" data-lang="en" title="Switch to English">
-                        <span class="flag">🇬🇧</span> EN
-                    </button>
+                    <div class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
+                        <button class="lang-dropdown-item active" data-lang="fr" type="button">
+                            <span class="flag">🇫🇷</span> <span>Français</span>
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </button>
+                        <button class="lang-dropdown-item" data-lang="en" type="button">
+                            <span class="flag">🇬🇧</span> <span>English</span>
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </button>
+                    </div>
                 </div>
                 <button class="cart-btn" id="openCartBtn" title="Voir le panier">
                     <i class="fa-solid fa-cart-shopping"></i>
