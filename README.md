@@ -2,6 +2,26 @@
 
 Site vitrine e-commerce et catalogue interactif pour **Tim Tools Machines**, distributeur officiel des outils et machines de marque **UPSPIRIT** à travers le monde.
 
+[![Déployer sur Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftychiquebongo-dev%2Ftimtoolsmachines)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-En%20Ligne-success?style=flat&logo=github)](https://tychiquebongo-dev.github.io/timtoolsmachines/)
+
+---
+
+## 🌐 Déploiement en Ligne
+
+- **GitHub Pages** : [https://tychiquebongo-dev.github.io/timtoolsmachines/](https://tychiquebongo-dev.github.io/timtoolsmachines/)
+- **Vercel** : Prêt pour déploiement automatique via le bouton ci-dessus ou en connectant ce dépôt sur [vercel.com](https://vercel.com). Configuration `vercel.json` incluse avec gestion de cache et routage statique.
+
+---
+
+## 📱 Version Mobile Optimisée
+
+- **100% Épurée** : Suppression de tous les éléments fictifs (faux avis, fausses stats, faux compteurs, accordéon générique) pour aller droit à l'essentiel.
+- **Accès Direct aux 36 Machines** : Catalogue dynamique immédiatement accessible avec filtres et recherche instantanée.
+- **Commande WhatsApp en 1 Clic** : Bouton vert avec message pré-rempli pour chaque article.
+- **Appel Téléphonique Direct** : `+225 07 89 55 74 42`.
+- **Performance Maximale** : Affichage fluide, ultra-léger et compatible avec tous les smartphones (iOS & Android).
+
 ---
 
 ## 🌟 Caractéristiques du Projet
