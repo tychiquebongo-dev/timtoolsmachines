@@ -8,27 +8,27 @@
 const PRODUCTS = [
     {
         "id": "p1",
-        "name": "Mallette à outils 186 pièces",
-        "name_en": "186-Piece Professional Tool Set with Trolley",
+        "name": "Mallette d'outillage complète avec visseuse sans fil",
+        "name_en": "Complete Toolkit Set with Cordless Drill (2 Batteries)",
         "category": "outillage",
         "brand": "UPSPIRIT",
         "image": "images/p1.jpg",
         "icon": "fa-solid fa-toolbox",
-        "role_badge": "Maintenance & Mécanique 186 pcs",
-        "role_badge_en": "186-Piece Maintenance & Mechanics",
-        "role": "Mallette complète ultra-robuste avec coffre à roulettes en aluminium. Contient 186 outils professionnels pour mécanique, électricité et maintenance générale.",
-        "role_en": "Ultra-heavy-duty complete toolkit in aluminum rolling trolley case. Contains 186 professional tools for mechanics, electrical and general maintenance.",
+        "role_badge": "Outillage complet + Visseuse 2 batt",
+        "role_badge_en": "Full Toolkit + Cordless Drill",
+        "role": "Coffret d'outillage complet ultra-polyvalent comprenant une perceuse-visseuse sans fil lithium avec 2 batteries et chargeur, marteau, pinces, scie, niveau, mètre ruban, forets, embouts et quincaillerie.",
+        "role_en": "Comprehensive all-in-one professional toolkit featuring a cordless lithium drill with 2 batteries & charger, hammer, pliers, handsaw, level, tape measure, drill bits, screw bits and fastener assortment.",
         "specs": [
-            "186 pièces acier CR-V",
-            "Valise trolley alu",
-            "Verrouillage à clé",
-            "Polyvalence totale"
+            "Visseuse 2 batteries + chargeur",
+            "Marteau, pinces & clé à molette",
+            "Scie, niveau & tournevis",
+            "Forets, embouts & quincaillerie"
         ],
         "specs_en": [
-            "186 pcs CR-V steel",
-            "Rolling aluminum case",
-            "Key lock security",
-            "Total versatility"
+            "Cordless drill + 2 batt + charger",
+            "Hammer, pliers & wrench",
+            "Handsaw, level & screwdrivers",
+            "Drill & driver bits set"
         ]
     },
     {
@@ -41,19 +41,19 @@ const PRODUCTS = [
         "icon": "fa-solid fa-spray-can",
         "role_badge": "Pulvérisation agricole 16L",
         "role_badge_en": "16L Agricultural Spraying",
-        "role": "Pulvérisateur dorsal haute résistance avec réservoir 16 litres, lance en inox et buse réglable. Idéal pour traitements agricoles, désinfection et jardinage.",
-        "role_en": "High-resistance backpack sprayer with 16-liter tank, stainless steel wand and adjustable nozzle. Ideal for agriculture, pest control and disinfection.",
+        "role": "Pulvérisateur dorsal haute résistance de marque officielle Upspirit. Réservoir ergonomique gradué, levier de pompage manuel réversible, lance télescopique inox avec buse laiton coudée réglable et bretelles confort.",
+        "role_en": "Heavy-duty genuine Upspirit backpack pressure sprayer. Ergonomic graduated tank, reversible manual pumping lever, stainless telescopic wand with adjustable brass nozzle and padded straps.",
         "specs": [
             "Capacité 16 Litres",
-            "Pression manuelle",
-            "Lance télescopique",
-            "Harnais confort"
+            "Cuve graduée Upspirit",
+            "Lance inox & buse laiton réglable",
+            "Bretelles de portage confort"
         ],
         "specs_en": [
             "16-Liter capacity",
-            "Manual pump action",
-            "Telescopic lance",
-            "Padded shoulder straps"
+            "Genuine Upspirit graduated tank",
+            "Stainless wand & brass nozzle",
+            "Padded backpack straps"
         ]
     },
     {
@@ -66,44 +66,44 @@ const PRODUCTS = [
         "icon": "fa-solid fa-pump-soap",
         "role_badge": "Pulvérisation grand volume 20L",
         "role_badge_en": "20L High-Capacity Spraying",
-        "role": "Modèle grande contenance 20 litres conçu pour les exploitations agricoles, grands chantiers et désinfection intensive. Ergonomie et débit continu.",
-        "role_en": "Large 20-liter tank designed for agricultural spraying, disinfection and construction sites. Continuous pressure and rugged build.",
+        "role": "Modèle grande contenance 20 litres conçu pour les exploitations agricoles, grands chantiers et désinfection intensive. Cuve polyéthylène haute résistance, pression constante et lance inox professionnelle.",
+        "role_en": "Large 20-liter tank designed for agricultural spraying, disinfection and construction sites. Heavy HDPE tank, continuous pressure, stainless wand and adjustable brass nozzle.",
         "specs": [
             "Capacité 20 Litres",
-            "Réservoir polyéthylène",
-            "Pression constante",
-            "Buse multi-jets"
+            "Cuve polyéthylène renforcée",
+            "Buse laiton réglable",
+            "Pression constante & filtre"
         ],
         "specs_en": [
             "20-Liter capacity",
-            "HDPE heavy tank",
-            "Constant pressure",
-            "Multi-pattern nozzle"
+            "Reinforced HDPE tank",
+            "Adjustable brass nozzle",
+            "Continuous pressure & filter"
         ]
     },
     {
         "id": "p4",
-        "name": "Coffret à douilles 46 pièces",
-        "name_en": "46-Piece Socket & Bit Set",
+        "name": "Plateau outillage clés mixtes & pinces atelier",
+        "name_en": "Workshop Combination Wrenches & Pliers Tray",
         "category": "outillage",
         "brand": "UPSPIRIT",
         "image": "images/p4.jpg",
         "icon": "fa-solid fa-wrench",
-        "role_badge": "Coffret serrage & cliquet 46 pcs",
-        "role_badge_en": "46-Piece Ratchet & Sockets",
-        "role": "Coffret compact d'outils de précision avec cliquet réversible 1/4\", rallonges, douilles et embouts variés. Indispensable pour la petite mécanique et auto.",
-        "role_en": "Compact socket set with 1/4\" quick-release ratchet, extension bars, Torx, Hex and Phillips bits. Indispensable for automotive and precision mechanical work.",
+        "role_badge": "Clés mixtes & Pinces bi-matière",
+        "role_badge_en": "Wrenches & Dual-Material Pliers",
+        "role": "Plateau thermoformé d'atelier comprenant un jeu de clés mixtes plates et à œil en acier chromé et 5 pinces professionnelles bi-matière (coupante, clé à molette, multiprise, bec long et universelle).",
+        "role_en": "Heavy-duty molded workshop tray featuring a set of chrome combination wrenches and 5 dual-material mechanic pliers (diagonal cutter, adjustable wrench, water pump plier, long nose, and combination plier).",
         "specs": [
-            "46 pièces",
-            "Cliquet réversible 1/4\"",
-            "Acier Chrome-Vanadium",
-            "Boîtier anti-chocs"
+            "Jeu de clés mixtes chromées",
+            "5 pinces d'atelier bi-matière",
+            "Clé à molette & multiprise",
+            "Plateau thermoformé rigide"
         ],
         "specs_en": [
-            "46 precision pieces",
-            "1/4\" reversible ratchet",
-            "Chrome-Vanadium steel",
-            "Shockproof hard case"
+            "Chrome combination wrenches",
+            "5 dual-material pliers",
+            "Adjustable wrench & pump plier",
+            "Rigid molded storage tray"
         ]
     },
     {
@@ -208,27 +208,27 @@ const PRODUCTS = [
     },
     {
         "id": "p9",
-        "name": "Marteau perforateur rotatif 20 mm",
-        "name_en": "Rotary Hammer Drill 20mm",
+        "name": "Perceuse à percussion filaire 13mm UPSPIRIT IMPACT DRILL",
+        "name_en": "Corded Impact Hammer Drill 13mm UPSPIRIT IMPACT DRILL",
         "category": "perforateur",
         "brand": "UPSPIRIT",
         "image": "images/p9.jpg",
         "icon": "fa-solid fa-hammer",
-        "role_badge": "Perçage rapide cloisons 20mm",
-        "role_badge_en": "Fast 20mm Partition Drilling",
-        "role": "Perforateur électropneumatique compact 20 mm pour forer rapidement et sans effort la brique, le plâtre et le béton léger.",
-        "role_en": "Compact electro-pneumatic 20mm hammer drill for fast effortless drilling into brick, plaster, and light concrete.",
+        "role_badge": "Perçage & Percussion 13mm",
+        "role_badge_en": "13mm Drilling & Impact Hammer",
+        "role": "Perceuse à percussion filaire 13 mm de marque officielle UPSPIRIT IMPACT DRILL. Sélecteur 2 modes (perçage rotatif / percussion frappe), mandrin tout acier à clé, poignée auxiliaire 360° et réglette de profondeur.",
+        "role_en": "Heavy-duty 13mm corded impact drill by official brand UPSPIRIT IMPACT DRILL. 2-mode selector (rotary drilling / impact hammering), all-steel keyed chuck, 360° aux handle and depth gauge rod.",
         "specs": [
-            "Diamètre 20 mm",
-            "Mandrin SDS-Plus",
-            "Perçage / Percussion",
-            "Poignée auxiliaire"
+            "Modèle UPSPIRIT IMPACT DRILL",
+            "Sélecteur Perçage / Percussion",
+            "Mandrin tout acier 13 mm",
+            "Poignée auxiliaire + butée"
         ],
         "specs_en": [
-            "20mm max diameter",
-            "SDS-Plus chuck",
-            "Drill / Hammer mode",
-            "Auxiliary handle"
+            "UPSPIRIT IMPACT DRILL model",
+            "Drill / Hammer mode switch",
+            "13mm heavy-duty steel chuck",
+            "Auxiliary handle + depth stop"
         ]
     },
     {
