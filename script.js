@@ -973,7 +973,6 @@ const TRANSLATIONS = {
         "card_stock": "En Stock - Prêt à livrer",
         "card_order_btn": "Commander",
         "card_quote": "Sur devis",
-        "google_view": "Voir sur Google",
         "adv_tag": "VOS AVANTAGES",
         "adv_title": "Pourquoi Choisir",
         "adv_f1_title": "Gamme Upspirit Authentique",
@@ -1125,7 +1124,6 @@ const TRANSLATIONS = {
         "card_stock": "In Stock - Ready to Ship",
         "card_order_btn": "Order",
         "card_quote": "On Quote",
-        "google_view": "View on Google",
         "adv_tag": "YOUR ADVANTAGES",
         "adv_title": "Why Choose",
         "adv_f1_title": "Authentic Upspirit Range",
@@ -1476,7 +1474,6 @@ function renderProducts() {
         const role = getProductRole(product);
         const specs = getProductSpecs(product);
         const roleBadge = currentLang === 'en' ? (product.role_badge_en || product.role_badge) : product.role_badge;
-        const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent('UPSPIRIT ' + title)}&tbm=isch`;
 
         const waMsgText = currentLang === 'en'
             ? `Hello Tim Tools Machines,\nI would like to order the following machine:\n- Product: ${title}\n- Brand: UPSPIRIT\nPlease confirm availability and delivery details in Abidjan / Cote d'Ivoire.`
@@ -1491,9 +1488,6 @@ function renderProducts() {
                 <meta itemprop="description" content="${role}">
                 <div class="product-media" onclick="openProductModal('${product.id}')" style="cursor: pointer;">
                     <div class="brand-chip"><i class="fa-solid fa-shield-halved text-yellow"></i> ${product.brand}</div>
-                    <a href="${googleSearchUrl}" target="_blank" rel="noopener noreferrer" class="google-badge" title="${t('google_view')}" onclick="event.stopPropagation();">
-                        <i class="fa-brands fa-google text-yellow"></i> Google
-                    </a>
                     <div class="product-img-wrapper">
                         <img src="${product.image}" alt="${title} - UPSPIRIT Outillage Professionnel" itemprop="image" class="product-real-img" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="product-icon-display" style="display: none;">
@@ -1647,7 +1641,6 @@ window.openProductModal = function (productId) {
     const role = getProductRole(product);
     const specs = getProductSpecs(product);
     const roleBadge = currentLang === 'en' ? (product.role_badge_en || product.role_badge) : product.role_badge;
-    const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent('UPSPIRIT ' + title)}&tbm=isch`;
 
     const waMsgText = currentLang === 'en'
         ? `Hello Tim Tools Machines,\nI would like to order the following machine:\n- Product: ${title}\n- Brand: UPSPIRIT\nPlease confirm availability and delivery options in Abidjan / Cote d'Ivoire.`
@@ -1685,12 +1678,9 @@ window.openProductModal = function (productId) {
             ${specs.map(s => `<span class="spec-pill" style="font-size: 0.85rem; padding: 0.35rem 0.75rem;"><i class="fa-solid fa-circle-check text-yellow"></i> ${s}</span>`).join('')}
         </div>
 
-        <div class="modal-actions" style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <a href="https://wa.me/2250715032798?text=${waMessage}" target="_blank" class="btn btn-whatsapp-large" style="flex: 2; min-width: 200px; justify-content: center; padding: 0.85rem 1.4rem; font-size: 1rem;">
+        <div class="modal-actions">
+            <a href="https://wa.me/2250715032798?text=${waMessage}" target="_blank" class="btn btn-whatsapp-large" style="width: 100%; justify-content: center; padding: 0.85rem 1.4rem; font-size: 1rem;">
                 <i class="fa-brands fa-whatsapp"></i> ${t("modal_order_btn")}
-            </a>
-            <a href="${googleSearchUrl}" target="_blank" rel="noopener noreferrer" class="btn-google-info" style="flex: 1; min-width: 130px;">
-                <i class="fa-brands fa-google text-yellow"></i> ${t("google_view")}
             </a>
         </div>
     `;
