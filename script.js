@@ -2006,11 +2006,11 @@ const PRODUCTS = [
         "name_en": "Combination Wrench Set 8mm to 24mm (Cr-V Steel)",
         "category": "outillage",
         "brand": "UPSPIRIT",
-        "model": "COMBINATION WRENCH 8-24MM",
+        "model": "COMBINATION WRENCH 8-24MM (WRENCH 8, WRENCH 10, WRENCH 12, WRENCH 13, WRENCH 14, WRENCH 15, WRENCH 17, WRENCH 19, WRENCH 22, WRENCH 24)",
         "image": "images/wrench_combination_set.jpg",
         "icon": "fa-solid fa-wrench",
-        "role_badge": "Clés mixtes 8 à 24 mm",
-        "role_badge_en": "8-24mm Combo Wrenches",
+        "role_badge": "Clés mixtes 8 à 24 mm (Wrench 8-24)",
+        "role_badge_en": "8-24mm Combo Wrenches (Wrench 8)",
         "role": "Clés mixtes professionnelles en acier Chrome-Vanadium forgé avec tête polygonale à 12 pans inclinée à 15° et tête plate fine pour tous travaux de mécanique automobile, poids lourds et maintenance industrielle.",
         "role_en": "Professional combination wrenches manufactured from drop-forged Chrome-Vanadium alloy steel. 15-degree offset 12-point box end and slim open-end for high-torque mechanical repairs.",
         "specs": [
@@ -2907,29 +2907,43 @@ function setupEventListeners() {
 }
 
 
+function foldSearchCatalog(str) {
+    return String(str || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/œ/g, 'oe')
+        .replace(/æ/g, 'ae');
+}
+
 // RENDER PRODUCTS WITH REAL IMAGES & DYNAMIC BADGES (BILINGUAL)
 function renderProducts() {
+    const qClean = foldSearchCatalog(currentSearch).trim().replace(/\bclef\b/g, 'cle');
+    const qTokens = qClean.split(/\s+/).filter(Boolean);
+    const qCompact = qClean.replace(/[^a-z0-9]/g, '');
+
     let filtered = PRODUCTS.filter(p => {
         const matchesCategory = currentCategory === "all" || p.category === currentCategory;
 
-        const titleFr = (p.name || "").toLowerCase();
-        const titleEn = (p.name_en || "").toLowerCase();
-        const roleFr = (p.role || "").toLowerCase();
-        const roleEn = (p.role_en || "").toLowerCase();
-        const brand = (p.brand || "").toLowerCase();
-        const badgeFr = (p.role_badge || "").toLowerCase();
-        const badgeEn = (p.role_badge_en || "").toLowerCase();
+        if (!matchesCategory) return false;
+        if (!qClean) return true;
 
-        const matchesSearch = !currentSearch ||
-            titleFr.includes(currentSearch) ||
-            titleEn.includes(currentSearch) ||
-            roleFr.includes(currentSearch) ||
-            roleEn.includes(currentSearch) ||
-            brand.includes(currentSearch) ||
-            badgeFr.includes(currentSearch) ||
-            badgeEn.includes(currentSearch);
+        const titleFr = foldSearchCatalog(p.name);
+        const titleEn = foldSearchCatalog(p.name_en);
+        const roleFr = foldSearchCatalog(p.role);
+        const roleEn = foldSearchCatalog(p.role_en);
+        const brand = foldSearchCatalog(p.brand);
+        const model = foldSearchCatalog(p.model);
+        const modelCompact = model.replace(/[^a-z0-9]/g, '');
+        const badgeFr = foldSearchCatalog(p.role_badge);
+        const badgeEn = foldSearchCatalog(p.role_badge_en);
+        const specsFr = foldSearchCatalog((p.specs || []).join(' '));
+        const specsEn = foldSearchCatalog((p.specs_en || []).join(' '));
 
-        return matchesCategory && matchesSearch;
+        const fullHaystack = `${titleFr} ${titleEn} ${roleFr} ${roleEn} ${brand} ${model} ${badgeFr} ${badgeEn} ${specsFr} ${specsEn}`;
+
+        return qTokens.every(t => fullHaystack.includes(t)) ||
+            (qCompact.length >= 2 && (modelCompact.includes(qCompact) || titleFr.includes(qClean) || titleEn.includes(qClean)));
     });
 
     // Sort: default or alphabetical
